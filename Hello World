@@ -2,6 +2,7 @@
 
 int main(){
 	int x = 5;
+	x++;
 	printf("Herro ya");
 	printf("%d", x);
 	return 0;
