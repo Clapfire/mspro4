@@ -6,10 +6,10 @@ int main(int argc, char const *argv[])
 	int x, y;
 
 	y = 2;
-	z = 4;
+	x = 4;
 
-	printf("%d", z*y);
-	printf("\n%d", z+y);
+	printf("%d", x*y);
+	printf("\n%d", x+y);
 
 	return 0;
 }
