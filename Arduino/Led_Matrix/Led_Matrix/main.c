@@ -7,24 +7,35 @@
 
 #define F_CPU 16000000UL
 
-#define r1 2
-#define g1 3
-#define b1 4
-#define r2 5
-#define g2 6
-#define b2 7
+/*
+ #define bit_get(p,m) ((p)&(m))
+ #define bit_set(p,m) ((p)|=(m))
+ #define bit_clear(p,m) ((p)&=~(m))
+ #define BIT(x) (0x01<<(x))
+*/
+
+#define BIT(x) (0x01<<(x))
+#define bit_set(p, m) ((p)|=(m))
+#define bit_clr(p, m) ((p)&=~(m))
+
+#define r1 BIT(2)
+#define g1 BIT(3)
+#define b1 BIT(4)
+#define r2 BIT(5)
+#define g2 BIT(6)
+#define b2 BIT(7)
 #define color PORTD
 
-#define clk 0
-#define lat 1
-#define oe 2
+#define clk BIT(0)
+#define lat BIT(1)
+#define oe BIT(2)
 #define sync PORTB
 
-#define a 0
-#define b 1
-#define c 2
-#define d 3
-#define e 4
+#define a BIT(0)
+#define b BIT(1)
+#define c BIT(2)
+#define d BIT(3)
+#define e BIT(4)
 #define latch PORTC
 
 #define matrix_size 8
@@ -86,8 +97,11 @@ int main(void)
 			row(i);
 		}
 		
-		sync |= 1 << lat;
-		sync &= ~(1 << lat);
+		bit_set(sync, lat);
+		bit_clr(sync, lat);
+
+		//sync |= 1 << lat;
+		//sync &= ~(1 << lat);
 	}
 
 	return 0;
@@ -103,8 +117,11 @@ void row(int row)
 		}
 	}
 
-	sync |= 1 << oe;
-	sync &= ~(1 << oe);
+	bit_set(sync, oe);
+	bit_clr(sync, oe);
+
+	//sync |= 1 << oe;
+	//sync &= ~(1 << oe);
 
 	draw(row);
 }
@@ -115,37 +132,48 @@ void draw(int row)
 	{
 		if (matrix_red[i])
 		{
-			color |= 1 << r1;
+			bit_set(color, r1);
+			//color |= 1 << r1;
 		}
 
 		if (matrix_green[i])
 		{
-			color |= 1 << g1;
+			bit_set(color, g1);
+			//color |= 1 << g1;
 		}
 
 		if (matrix_blue[i])
 		{
-			color |= 1 << b1;
+			bit_set(color, b1);
+			//color |= 1 << b1;
 		}
 
 		if (matrix_red[i+32])
 		{
-			color |= 1 << r2;
+			bit_set(color, r2);
+			//color |= 1 << r2;
 		}
 
 		if (matrix_green[i+32])
 		{
-			color |= 1 << r2;
+			bit_set(color g2);
+			//color |= 1 << r2;
 		}
 
 		if (matrix_blue[i+32])
 		{
-			color |= 1 << r2;
+			bit_set(color, b2);
+			//color |= 1 << r2;
 		}
 
 		for(int i = 0; i < (64/matrix_size); i++){
-			sync |= 1 << clk;
-			sync &= ~(1 << clk);
+
+			bit_set(sync, clk);
+			bit_clr(sync, clk);
+			//sync |= 1 << clk;
+			//sync &= ~(1 << clk);
 		}
+
+		color &= 0x00;
 	}
 }
