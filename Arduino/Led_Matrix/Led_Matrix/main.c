@@ -7,13 +7,6 @@
 
 #define F_CPU 16000000UL
 
-/*
- #define bit_get(p,m) ((p)&(m))
- #define bit_set(p,m) ((p)|=(m))
- #define bit_clear(p,m) ((p)&=~(m))
- #define BIT(x) (0x01<<(x))
-*/
-
 #define BIT(x) (0x01<<(x))
 #define bit_set(p, m) ((p)|=(m))
 #define bit_clr(p, m) ((p)&=~(m))
