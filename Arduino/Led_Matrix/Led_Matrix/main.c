@@ -41,6 +41,44 @@ char matrix_red[matrix_size * matrix_size];
 char matrix_green[matrix_size * matrix_size];
 char matrix_blue[matrix_size * matrix_size];
 
+
+char matrix_red[matrix_size * matrix_size] = {
+	0, 1, 0, 1, 0, 1, 0, 1,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0
+};
+
+char matrix_blue[matrix_size * matrix_size] = {
+	0, 0, 0, 0, 0, 0, 0, 0,
+	1, 0, 1, 0, 1, 0, 1, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0
+};
+
+char matrix_green[matrix_size * matrix_size] = {
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 1, 0, 1, 0, 1, 0, 1,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0
+};
+
+void draw(int);
+void row(int);
+void draw_screen(void);
+
 int main(void)
 {
 	DDRC = 0xFF;
@@ -51,50 +89,22 @@ int main(void)
 	color = 0x00;
 	latch = 0x00;
 
-	matrix_red[
-	 	 	    0, 0, 0, 0, 0, 0, 0, 0,
-			    0, 0, 0, 0, 0, 0, 0, 0,
-			    0, 0, 1, 1, 1, 1, 0, 0,
-			    0, 0, 1, 1, 1, 1, 0, 0,
-			    0, 0, 1, 1, 1, 1, 0, 0,
-			    0, 0, 1, 1, 1, 1, 0, 0,
-			    0, 0, 0, 0, 0, 0, 0, 0,
-			    0, 0, 0, 0, 0, 0, 0, 0
-			   ];
-
-	matrix_blue[
-			    0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 1, 1, 1, 1, 0, 0,
-				0, 0, 1, 1, 1, 1, 0, 0,
-				0, 0, 1, 1, 1, 1, 0, 0,
-				0, 0, 1, 1, 1, 1, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0
-				];
-
-	matrix_green[
-			    0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 1, 1, 1, 1, 0, 0,
-				0, 0, 1, 1, 1, 1, 0, 0,
-				0, 0, 1, 1, 1, 1, 0, 0,
-				0, 0, 1, 1, 1, 1, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0,
-				0, 0, 0, 0, 0, 0, 0, 0
-				];
 
 	while (1)
 	{
+		/*
 		for(int i = 0; i < 32; i++){
-			row(i);
-		}
-		
+		row(i);
 		bit_set(sync, lat);
 		bit_clr(sync, lat);
+		}
+		
+
 
 		//sync |= 1 << lat;
 		//sync &= ~(1 << lat);
+		*/
+		draw_screen();
 	}
 
 	return 0;
@@ -108,25 +118,30 @@ void row(int row)
 		{
 			latch |= (1 << i);
 		}
+		else{
+			latch &= ~(1 << i);
+		}
 	}
 
-	bit_set(sync, oe);
-	bit_clr(sync, oe);
-
-	//sync |= 1 << oe;
-	//sync &= ~(1 << oe);
-
+	//bit_set(sync, oe);
+	//bit_clr(sync, oe);
+	
 	draw(row);
 }
 
 void draw(int row)
 {
-	for (int i = row; i < (row  + matrix_size); i++)
+	bit_set(sync, oe);
+	bit_clr(sync, oe);
+	for (int i = row*matrix_size; i < (row*matrix_size  + matrix_size); i++)
 	{
 		if (matrix_red[i])
 		{
 			bit_set(color, r1);
 			//color |= 1 << r1;
+		}
+		else{
+			bit_clr(color, r1);
 		}
 
 		if (matrix_green[i])
@@ -134,31 +149,46 @@ void draw(int row)
 			bit_set(color, g1);
 			//color |= 1 << g1;
 		}
+		else{
+			bit_clr(color, g1);
+		}
 
 		if (matrix_blue[i])
 		{
 			bit_set(color, b1);
 			//color |= 1 << b1;
 		}
-
+		else{
+			bit_clr(color, b1);
+		}
+		
 		if (matrix_red[i+32])
 		{
 			bit_set(color, r2);
 			//color |= 1 << r2;
 		}
-
+		else{
+			bit_clr(color, r2);
+		}
+		
 		if (matrix_green[i+32])
 		{
-			bit_set(color g2);
+			bit_set(color, g2);
 			//color |= 1 << r2;
 		}
-
+		else{
+			bit_clr(color, g2);
+		}
+		
 		if (matrix_blue[i+32])
 		{
 			bit_set(color, b2);
 			//color |= 1 << r2;
 		}
-
+		else{
+			bit_clr(color, b2);
+		}
+		
 		for(int i = 0; i < (64/matrix_size); i++){
 
 			bit_set(sync, clk);
@@ -167,6 +197,47 @@ void draw(int row)
 			//sync &= ~(1 << clk);
 		}
 
-		color &= 0x00;
+	}
+}
+
+void draw_screen(void){
+	int bit_count;
+	for (int i = 0; i < 32; i++)
+	{
+		for (int ii = 0; ii < 5; ii++)
+		{
+			if (i & (1 << ii))
+			{
+				latch |= (1 << ii);
+			}
+			else{
+				latch &= ~(1 << ii);
+			}
+
+			
+			switch (i)
+			{
+				case (64/matrix_size):
+				bit_count = 1;
+				break;
+				
+				case (64/matrix_size)*2:
+				bit_count = 2;
+				break;
+				
+				case (64/matrix_size)*3:
+				bit_count = 3;
+				break;
+				
+				default :
+				bit_count = 0;
+				break;
+			}
+			
+			draw(bit_count);
+		}
+		
+		bit_set(sync, lat);
+		bit_clr(sync, lat);
 	}
 }
