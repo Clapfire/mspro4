@@ -62,9 +62,11 @@ process(state) begin
         p_clk <= '0';
         
         elsif(state = "10000001") then --129 0x81
+        oe <= '0';
         lat <= '1';
         rst_state <= '1';
         row <= '1';
+        p_clk <= '0';
         
         else
             if(state(0) = '0')then --last bit 0, even

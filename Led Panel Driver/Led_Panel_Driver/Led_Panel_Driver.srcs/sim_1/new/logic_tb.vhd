@@ -68,6 +68,7 @@ begin
 uut : logic port map(
         clk => clk,
         global_rst => global_rst,
+        oe => oe,
         lat => lat,
         p_clk => p_clk,
         la => la,
