@@ -39,9 +39,11 @@ architecture Behavioral of logic_tb is
 
 component logic
     Port ( clk : in STD_LOGIC;
+       global_rst : in STD_LOGIC;
        oe : out STD_LOGIC;
        lat : out STD_LOGIC;
        p_clk : out STD_LOGIC;
+       row : out STD_LOGIC;
        la : out STD_LOGIC;
        lb : out STD_LOGIC;
        lc : out STD_LOGIC;
@@ -59,11 +61,13 @@ signal ld : std_logic;
 signal le : std_logic;
 
 signal clk : std_logic;
+signal global_rst : std_logic;
 
 begin
 
 uut : logic port map(
         clk => clk,
+        global_rst => global_rst,
         lat => lat,
         p_clk => p_clk,
         la => la,
@@ -71,6 +75,13 @@ uut : logic port map(
         lc => lc,
         ld => ld,
         le => le);
+
+reset : process begin
+    global_rst <= '1';
+    wait for 1000 ns;
+    global_rst <= '0';
+    wait;
+end process;
 
 stim_proc: process
 begin

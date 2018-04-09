@@ -21,10 +21,11 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -65,28 +66,8 @@ uut : state_machine port map(
  
  stim_proc: process
  begin
-    wait for 100 ns;
-    state <= "00000001";
-    
-    wait for 100 ns;
-    state <= "00000010";
-    
-    wait for 100 ns;
-    state <= "00000011";
-    
-    wait for 100 ns;
-    state <= "00000100";
-    
-    wait for 100 ns;
-    state <= "00000101";
-    
-    wait for 100 ns;
-    state <= "00000010";
-    
-    wait for 100 ns;
-    state <= "10000001";
-    
-    wait;   
+    wait for 10 ns;
+    state <= state + 1; 
 end process;
 
 end Behavioral;

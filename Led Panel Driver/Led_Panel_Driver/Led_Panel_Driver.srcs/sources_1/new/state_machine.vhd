@@ -37,7 +37,8 @@ entity state_machine is
            row : out STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
-           p_clk : out STD_LOGIC);
+           p_clk : out STD_LOGIC;
+           rst : in STD_LOGIC);
 end state_machine;
 
 architecture Behavioral of state_machine is
@@ -45,35 +46,44 @@ architecture Behavioral of state_machine is
 begin
 
 process(state) begin
-    if(state = "00000000")then --0 0x00
-    oe <= '1';
-    lat <= '0';
-    rst_state <= '0';
-    row <= '0';
-    
-    elsif(state = "10000001") then --129 0x81
-    lat <= '1';
-    rst_state <= '1';
-    row <= '1';
-    
-    else
-        if(state(0) = '0')then --last bit 0, even
+    if(rst = '1') then
+        rst_state <= '1';
+        row <= '0';
+        oe <= '0';
+        lat <= '0';
         p_clk <= '0';
-        oe <= '0';
-        lat <= '0';
-        rst_state <= '0';
-        row <= '0';
         
-        else --last bit 1, odd
-        p_clk <= '1';
-        oe <= '0';
+    else
+        if(state = "00000000")then --0 0x00
+        oe <= '1';
         lat <= '0';
         rst_state <= '0';
         row <= '0';
+        p_clk <= '0';
+        
+        elsif(state = "10000001") then --129 0x81
+        lat <= '1';
+        rst_state <= '1';
+        row <= '1';
+        
+        else
+            if(state(0) = '0')then --last bit 0, even
+            p_clk <= '0';
+            oe <= '0';
+            lat <= '0';
+            rst_state <= '0';
+            row <= '0';
+           
+            else --last bit 1, odd
+            p_clk <= '1';
+            oe <= '0';
+            lat <= '0';
+            rst_state <= '0';
+            row <= '0';
+            end if;
+            
         end if;
-        
     end if;
-    
 end process;
 
 end Behavioral;

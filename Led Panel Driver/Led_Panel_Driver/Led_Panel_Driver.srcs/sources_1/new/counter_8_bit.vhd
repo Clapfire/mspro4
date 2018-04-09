@@ -45,7 +45,7 @@ signal count_internal : unsigned (7 downto 0);
 begin
 
 process(clk)begin
-    if(clk = '1')then
+    if(rising_edge(clk))then
         if(rst = '1') then
             count_internal <= "00000000";
         else

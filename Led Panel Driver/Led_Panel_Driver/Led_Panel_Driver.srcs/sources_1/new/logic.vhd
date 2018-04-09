@@ -33,9 +33,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity logic is
     Port ( clk : in STD_LOGIC;
+           global_rst : in STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
            p_clk : out STD_LOGIC;
+           row : out STD_LOGIC;
            la : out STD_LOGIC;
            lb : out STD_LOGIC;
            lc : out STD_LOGIC;
@@ -47,6 +49,7 @@ architecture Structural of logic is
 
 component state_machine
     Port ( state : in STD_LOGIC_VECTOR (7 downto 0);
+       rst : in STD_LOGIC;
        rst_state : out STD_LOGIC;
        row : out STD_LOGIC;
        oe : out STD_LOGIC;
@@ -56,6 +59,7 @@ end component;
 
 component counter_5_bit
     Port ( clk : in STD_LOGIC;
+       rst : in STD_LOGIC;
        la : out STD_LOGIC;
        lb : out STD_LOGIC;
        lc : out STD_LOGIC;
@@ -70,8 +74,7 @@ component counter_8_bit
 end component;
 
 signal rst : STD_LOGIC;
-signal row : STD_LOGIC;
-
+signal rowToClk : STD_LOGIC;
 signal state_counter : STD_LOGIC_VECTOR(7 downto 0);
 
 
@@ -80,13 +83,15 @@ begin
 c1 : state_machine PORT MAP(
                     state => state_counter,
                     rst_state => rst,
-                    row => row,
+                    rst => global_rst,
+                    row => rowToClk,
                     oe => oe,
                     lat => lat,
                     p_clk => p_clk);
                     
 c2 : counter_5_bit PORT MAP (
-                    clk => row,
+                    clk => rowToClk,
+                    rst => global_rst,
                     la => la,
                     lb => lb,
                     lc => lc,
@@ -97,5 +102,6 @@ c3 : counter_8_bit PORT MAP (
                     clk => clk,
                     rst => rst,
                     count => state_counter);
+    row <= rowToClk;
 
 end Structural;
