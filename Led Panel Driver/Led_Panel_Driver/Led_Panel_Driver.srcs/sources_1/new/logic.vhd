@@ -32,17 +32,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity logic is
-    Port ( clk : in STD_LOGIC;
+    Port ( Clk : in STD_LOGIC;
            global_rst : in STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
-           p_clk : out STD_LOGIC;
-           row : out STD_LOGIC;
+           p_clk_out : out STD_LOGIC;
+           --row : out STD_LOGIC;
            la : out STD_LOGIC;
            lb : out STD_LOGIC;
            lc : out STD_LOGIC;
            ld : out STD_LOGIC;
-           le : out STD_LOGIC);
+           le : out STD_LOGIC;
+           r1 : out STD_LOGIC;
+           r2 : out STD_LOGIC);
+           --clk_test : out STD_LOGIC);
 end logic;
 
 architecture Structural of logic is
@@ -73,14 +76,45 @@ component counter_8_bit
        count : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
+component counter_11_bit
+    Port ( clk : in STD_LOGIC;
+       rst : in STD_LOGIC;
+       counta : out STD_LOGIC_VECTOR (11 downto 0);
+       countb : out STD_LOGIC_VECTOR (11 downto 0));
+end component;
+
+component clk_50
+    Port(clk_in1 : in STD_LOGIC;
+       reset : in STD_LOGIC;
+       clk_out1 : out STD_LOGIC);
+end component;
+
+component blk_mem_gen_0
+    Port (addra : in STD_LOGIC_VECTOR(11 downto 0);
+       clka : in STD_LOGIC;
+       douta : out STD_LOGIC;
+       addrb : in STD_LOGIC_VECTOR(11 downto 0);
+       clkb : in STD_LOGIC;
+       doutb : out STD_LOGIC);
+end component;
+
+component inv
+    Port (inInv : in STD_LOGIC;
+       outInv : out STD_LOGIC);
+end component;
+
 signal rst : STD_LOGIC;
 signal rowToClk : STD_LOGIC;
 signal state_counter : STD_LOGIC_VECTOR(7 downto 0);
-
+signal clk50ToCount8 : STD_LOGIC;
+signal p_clk : STD_LOGIC;
+signal p_clk_inv : STD_LOGIC;
+signal addra : STD_LOGIC_VECTOR(11 downto 0);
+signal addrb : STD_LOGIC_VECTOR(11 downto 0);
 
 begin
 
-c1 : state_machine PORT MAP(
+state : state_machine PORT MAP(
                     state => state_counter,
                     rst_state => rst,
                     rst => global_rst,
@@ -89,7 +123,9 @@ c1 : state_machine PORT MAP(
                     lat => lat,
                     p_clk => p_clk);
                     
-c2 : counter_5_bit PORT MAP (
+       p_clk_out <= p_clk;
+       
+bit5 : counter_5_bit PORT MAP (
                     clk => rowToClk,
                     rst => global_rst,
                     la => la,
@@ -98,10 +134,31 @@ c2 : counter_5_bit PORT MAP (
                     ld => ld,
                     le => le);
 
-c3 : counter_8_bit PORT MAP (
-                    clk => clk,
+bit8 : counter_8_bit PORT MAP (
+                    clk => clk50ToCount8,
                     rst => rst,
                     count => state_counter);
-    row <= rowToClk;
 
+bit11 : counter_11_bit PORT MAP (
+                    clk => p_clk,
+                    rst => global_rst,
+                    counta => addra,
+                    countb => addrb);
+                    
+clk_reduced : clk_50 PORT MAP (
+                    clk_in1 => Clk,
+                    reset => global_rst,
+                    clk_out1 => clk50ToCount8);
+
+p_clk_inverted : inv PORT MAP (
+                    inInv => p_clk,
+                    outInv => p_clk_inv);
+                    
+memory : blk_mem_gen_0 PORT MAP (
+                    addra => addra,
+                    clka => p_clk_inv,
+                    douta => r1,
+                    addrb => addrb,
+                    clkb => p_clk_inv,
+                    doutb => r2);
 end Structural;

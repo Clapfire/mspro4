@@ -42,13 +42,14 @@ component logic
        global_rst : in STD_LOGIC;
        oe : out STD_LOGIC;
        lat : out STD_LOGIC;
-       p_clk : out STD_LOGIC;
-       row : out STD_LOGIC;
+       p_clk_out : out STD_LOGIC;
        la : out STD_LOGIC;
        lb : out STD_LOGIC;
        lc : out STD_LOGIC;
        ld : out STD_LOGIC;
-       le : out STD_LOGIC);
+       le : out STD_LOGIC;
+       r1 : out STD_LOGIC;
+       r2 : out STD_LOGIC);
 end component;
 
 signal oe : std_logic;
@@ -59,6 +60,8 @@ signal lb : std_logic;
 signal lc : std_logic;
 signal ld : std_logic;
 signal le : std_logic;
+signal r1 : std_logic;
+signal r2 : std_logic;
 
 signal clk : std_logic;
 signal global_rst : std_logic;
@@ -70,26 +73,28 @@ uut : logic port map(
         global_rst => global_rst,
         oe => oe,
         lat => lat,
-        p_clk => p_clk,
+        p_clk_out => p_clk,
         la => la,
         lb => lb,
         lc => lc,
         ld => ld,
-        le => le);
+        le => le,
+        r1 => r1,
+        r2 => r2);
 
 reset : process begin
     global_rst <= '1';
-    wait for 1000 ns;
+    wait for 50 ns;
     global_rst <= '0';
     wait;
 end process;
 
 stim_proc: process
 begin
-    wait for 50 ns;
+    wait for 5 ns;
     clk <= '1';
     
-    wait for 50 ns;
+    wait for 5 ns;
     clk <= '0';
     
 end process;

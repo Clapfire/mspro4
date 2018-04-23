@@ -41,17 +41,16 @@ end counter_8_bit;
 architecture Behavioral of counter_8_bit is
 
 signal count_internal : unsigned (7 downto 0);
-
 begin
 
 process(clk)begin
+
     if(rising_edge(clk))then
         if(rst = '1') then
             count_internal <= "00000000";
         else
             count_internal <= count_internal + 1;
         end if;
-        
     end if;
     
     count <= STD_LOGIC_VECTOR(count_internal);

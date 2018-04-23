@@ -55,13 +55,13 @@ process(clk) begin
                 count_internal <= count_internal + 1;
         end if;
         
-        la <= STD_LOGIC(count_internal(0));
-        lb <= STD_LOGIC(count_internal(1));
-        lc <= STD_LOGIC(count_internal(2));
-        ld <= STD_LOGIC(count_internal(3));
-        le <= STD_LOGIC(count_internal(4));
-        
     end if;
 end process;
+
+    la <= STD_LOGIC(count_internal(0));
+    lb <= STD_LOGIC(count_internal(1));
+    lc <= STD_LOGIC(count_internal(2));
+    ld <= STD_LOGIC(count_internal(3));
+    le <= STD_LOGIC(count_internal(4));
 
 end Behavioral;
