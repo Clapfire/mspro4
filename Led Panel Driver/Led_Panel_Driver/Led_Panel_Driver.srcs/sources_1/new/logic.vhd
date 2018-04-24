@@ -79,8 +79,7 @@ end component;
 component counter_11_bit
     Port ( clk : in STD_LOGIC;
        rst : in STD_LOGIC;
-       counta : out STD_LOGIC_VECTOR (11 downto 0);
-       countb : out STD_LOGIC_VECTOR (11 downto 0));
+       counta : out STD_LOGIC_VECTOR (10 downto 0));
 end component;
 
 component clk_50
@@ -89,28 +88,34 @@ component clk_50
        clk_out1 : out STD_LOGIC);
 end component;
 
-component blk_mem_gen_0
-    Port (addra : in STD_LOGIC_VECTOR(11 downto 0);
-       clka : in STD_LOGIC;
-       douta : out STD_LOGIC;
-       addrb : in STD_LOGIC_VECTOR(11 downto 0);
-       clkb : in STD_LOGIC;
-       doutb : out STD_LOGIC);
+component memory
+    Port(clk : in STD_LOGIC;
+        adr : in STD_LOGIC_VECTOR(10 downto 0);
+        out1 : out STD_LOGIC;
+        out2 : out STD_LOGIC);
 end component;
 
-component inv
-    Port (inInv : in STD_LOGIC;
-       outInv : out STD_LOGIC);
-end component;
+--component blk_mem_gen_0
+--    Port (addra : in STD_LOGIC_VECTOR(11 downto 0);
+--       clka : in STD_LOGIC;
+--       douta : out STD_LOGIC;
+--       addrb : in STD_LOGIC_VECTOR(11 downto 0);
+--       clkb : in STD_LOGIC;
+--       doutb : out STD_LOGIC);
+--end component;
+
+--component inv
+--    Port (inInv : in STD_LOGIC;
+--       outInv : out STD_LOGIC);
+--end component;
 
 signal rst : STD_LOGIC;
 signal rowToClk : STD_LOGIC;
 signal state_counter : STD_LOGIC_VECTOR(7 downto 0);
 signal clk50ToCount8 : STD_LOGIC;
 signal p_clk : STD_LOGIC;
-signal p_clk_inv : STD_LOGIC;
-signal addra : STD_LOGIC_VECTOR(11 downto 0);
-signal addrb : STD_LOGIC_VECTOR(11 downto 0);
+--signal p_clk_inv : STD_LOGIC;
+signal addra : STD_LOGIC_VECTOR(10 downto 0);
 
 begin
 
@@ -142,23 +147,28 @@ bit8 : counter_8_bit PORT MAP (
 bit11 : counter_11_bit PORT MAP (
                     clk => p_clk,
                     rst => global_rst,
-                    counta => addra,
-                    countb => addrb);
+                    counta => addra);
                     
 clk_reduced : clk_50 PORT MAP (
                     clk_in1 => Clk,
                     reset => global_rst,
                     clk_out1 => clk50ToCount8);
 
-p_clk_inverted : inv PORT MAP (
-                    inInv => p_clk,
-                    outInv => p_clk_inv);
+mem : memory PORT MAP (
+                    clk => p_clk,
+                    adr => addra,
+                    out1 => r1,
+                    out2 => r2);
                     
-memory : blk_mem_gen_0 PORT MAP (
-                    addra => addra,
-                    clka => p_clk_inv,
-                    douta => r1,
-                    addrb => addrb,
-                    clkb => p_clk_inv,
-                    doutb => r2);
+--p_clk_inverted : inv PORT MAP (
+--                    inInv => p_clk,
+--                    outInv => p_clk_inv);
+                    
+--memory : blk_mem_gen_0 PORT MAP (
+--                    addra => addra,
+--                    clka => p_clk_inv,
+--                    douta => r1,
+--                    addrb => addrb,
+--                    clkb => p_clk_inv,
+--                    doutb => r2);
 end Structural;

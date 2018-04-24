@@ -1,9 +1,9 @@
--- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Mon Apr 16 16:56:36 2018
+-- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+-- Date        : Mon Apr 23 13:16:19 2018
 -- Host        : DESKTOP-4PILJD1 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {d:/SDU/4th Semester/Semester Project/mspro4/Led Panel
+-- Command     : write_vhdl -force -mode funcsim {D:/SDU/4th Semester/Semester Project/mspro4/Led Panel
 --               Driver/Led_Panel_Driver/Led_Panel_Driver.srcs/sources_1/ip/clk_50/clk_50_sim_netlist.vhdl}
 -- Design      : clk_50
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
@@ -79,12 +79,12 @@ clkout1_buf: unisim.vcomponents.BUFG
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
-      CLKFBOUT_MULT_F => 10.000000,
+      CLKFBOUT_MULT_F => 15.625000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 10.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 20.000000,
+      CLKOUT0_DIVIDE_F => 78.125000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
@@ -114,7 +114,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT6_PHASE => 0.000000,
       CLKOUT6_USE_FINE_PS => false,
       COMPENSATION => "ZHOLD",
-      DIVCLK_DIVIDE => 1,
+      DIVCLK_DIVIDE => 2,
       IS_CLKINSEL_INVERTED => '0',
       IS_PSEN_INVERTED => '0',
       IS_PSINCDEC_INVERTED => '0',
