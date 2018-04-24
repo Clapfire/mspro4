@@ -9,6 +9,7 @@
 #Also in subdirectories
 !*/
 
+!*/*.srcs/constrs_1/new/*
 !*/*.srcs/sim_1/new/*
 !*/*.srcs/sources_1/new/*
 
