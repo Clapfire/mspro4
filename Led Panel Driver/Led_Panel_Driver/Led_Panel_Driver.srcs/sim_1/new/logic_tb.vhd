@@ -49,7 +49,11 @@ component logic
        ld : out STD_LOGIC;
        le : out STD_LOGIC;
        r1 : out STD_LOGIC;
-       r2 : out STD_LOGIC);
+       r2 : out STD_LOGIC;
+       g1 : out STD_LOGIC;
+       g2 : out STD_LOGIC;
+       b1 : out STD_LOGIC;
+       b2 : out STD_LOGIC);
 end component;
 
 signal oe : std_logic;
@@ -80,7 +84,11 @@ uut : logic port map(
         ld => ld,
         le => le,
         r1 => r1,
-        r2 => r2);
+        r2 => r2,
+        g1 => g1,
+        g2 => g2,
+        b1 => b1,
+        b2 => b2);
 
 reset : process begin
     global_rst <= '1';

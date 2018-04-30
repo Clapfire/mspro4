@@ -44,7 +44,11 @@ entity logic is
            ld : out STD_LOGIC;
            le : out STD_LOGIC;
            r1 : out STD_LOGIC;
-           r2 : out STD_LOGIC);
+           r2 : out STD_LOGIC;
+           g1 : out STD_LOGIC;
+           g2 : out STD_LOGIC;
+           b1 : out STD_LOGIC;
+           b2 : out STD_LOGIC);
            --clk_test : out STD_LOGIC);
 end logic;
 
@@ -88,11 +92,20 @@ component clk_50
        clk_out1 : out STD_LOGIC);
 end component;
 
+component clk_divider
+    Port(clk : in STD_LOGIC;
+        output : out STD_LOGIC);
+end component;
+
 component memory
     Port(clk : in STD_LOGIC;
         adr : in STD_LOGIC_VECTOR(10 downto 0);
-        out1 : out STD_LOGIC;
-        out2 : out STD_LOGIC);
+        r1out : out STD_LOGIC;
+        r2out : out STD_LOGIC;
+        g1out : out STD_LOGIC;
+        g2out : out STD_LOGIC;
+        b1out : out STD_LOGIC;
+        b2out : out STD_LOGIC);
 end component;
 
 --component blk_mem_gen_0
@@ -112,10 +125,11 @@ end component;
 signal rst : STD_LOGIC;
 signal rowToClk : STD_LOGIC;
 signal state_counter : STD_LOGIC_VECTOR(7 downto 0);
-signal clk50ToCount8 : STD_LOGIC;
+signal clk_dividerToCount8 : STD_LOGIC;
 signal p_clk : STD_LOGIC;
 --signal p_clk_inv : STD_LOGIC;
 signal addra : STD_LOGIC_VECTOR(10 downto 0);
+signal clk50ToDivider : STD_LOGIC;
 
 begin
 
@@ -140,7 +154,7 @@ bit5 : counter_5_bit PORT MAP (
                     le => le);
 
 bit8 : counter_8_bit PORT MAP (
-                    clk => clk50ToCount8,
+                    clk => clk_dividerToCount8,
                     rst => rst,
                     count => state_counter);
 
@@ -152,13 +166,21 @@ bit11 : counter_11_bit PORT MAP (
 clk_reduced : clk_50 PORT MAP (
                     clk_in1 => Clk,
                     reset => global_rst,
-                    clk_out1 => clk50ToCount8);
+                    clk_out1 => clk50ToDivider);
+                    
+clk_reduced_further : clk_divider PORT MAP (
+                    clk => clk50ToDivider,
+                    output => clk_dividerToCount8);
 
 mem : memory PORT MAP (
                     clk => p_clk,
                     adr => addra,
-                    out1 => r1,
-                    out2 => r2);
+                    r1out => r1,
+                    r2out => r2,
+                    g1out => g1,
+                    g2out => g2,
+                    b1out => b1,
+                    b2out => b2);
                     
 --p_clk_inverted : inv PORT MAP (
 --                    inInv => p_clk,
