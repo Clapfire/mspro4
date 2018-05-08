@@ -44,14 +44,11 @@ signal count_internal_a : unsigned (10 downto 0);
 
 begin
 
-process(clk)begin
-
-    if(rising_edge(clk))then
-        if(rst = '1') then
-            count_internal_a <= "00000000000";
-        else
-            count_internal_a <= count_internal_a + 1;
-        end if;
+process(clk, rst)begin
+    if(rst = '1') then
+        count_internal_a <= "00000000000";
+    elsif(rising_edge(clk))then
+        count_internal_a <= count_internal_a + 1;
     end if;
     
     counta <= STD_LOGIC_VECTOR(count_internal_a);

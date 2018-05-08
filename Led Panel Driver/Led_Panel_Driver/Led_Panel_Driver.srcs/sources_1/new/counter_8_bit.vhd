@@ -35,6 +35,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity counter_8_bit is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
+           global_rst : in STD_LOGIC;
            count : out STD_LOGIC_VECTOR (7 downto 0));
 end counter_8_bit;
 
@@ -43,9 +44,10 @@ architecture Behavioral of counter_8_bit is
 signal count_internal : unsigned (7 downto 0);
 begin
 
-process(clk)begin
-
-    if(rising_edge(clk))then
+process(clk, global_rst)begin
+    if(global_rst = '1')then
+    count_internal <= "00000000";
+    elsif(rising_edge(clk))then
         if(rst = '1') then
             count_internal <= "00000000";
         else

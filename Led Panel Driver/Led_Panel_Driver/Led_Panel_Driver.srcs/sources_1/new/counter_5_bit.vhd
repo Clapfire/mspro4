@@ -47,14 +47,11 @@ signal count_internal : unsigned (4 downto 0);
 
 begin
 
-process(clk) begin
+process(clk, rst) begin
     if(rst = '1') then
         count_internal <= "00000";
-    else
-        if(rising_edge(clk))then
-                count_internal <= count_internal + 1;
-        end if;
-        
+    elsif(rising_edge(clk))then
+                count_internal <= count_internal + 1;        
     end if;
 end process;
 

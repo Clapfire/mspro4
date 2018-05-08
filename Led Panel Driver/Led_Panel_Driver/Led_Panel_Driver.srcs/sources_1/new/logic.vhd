@@ -77,6 +77,7 @@ end component;
 component counter_8_bit
     Port ( clk : in STD_LOGIC;
        rst : in STD_LOGIC;
+       global_rst : in STD_LOGIC;
        count : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
@@ -156,6 +157,7 @@ bit5 : counter_5_bit PORT MAP (
 bit8 : counter_8_bit PORT MAP (
                     clk => clk_dividerToCount8,
                     rst => rst,
+                    global_rst => global_rst,
                     count => state_counter);
 
 bit11 : counter_11_bit PORT MAP (
