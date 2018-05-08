@@ -66,6 +66,10 @@ signal ld : std_logic;
 signal le : std_logic;
 signal r1 : std_logic;
 signal r2 : std_logic;
+signal g1 : std_logic;
+signal g2 : std_logic;
+signal b1 : std_logic;
+signal b2 : std_logic;
 
 signal clk : std_logic;
 signal global_rst : std_logic;
