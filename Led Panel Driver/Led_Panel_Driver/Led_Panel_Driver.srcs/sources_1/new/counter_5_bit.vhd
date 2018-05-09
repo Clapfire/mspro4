@@ -49,7 +49,7 @@ begin
 
 process(clk, rst) begin
     if(rst = '1') then
-        count_internal <= "00000";
+        count_internal <= "11111";
     elsif(rising_edge(clk))then
                 count_internal <= count_internal + 1;        
     end if;
