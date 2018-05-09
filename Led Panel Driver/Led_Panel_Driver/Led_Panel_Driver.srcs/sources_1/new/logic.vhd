@@ -103,6 +103,7 @@ end component;
 component memory
     Port(clk : in STD_LOGIC;
         adr : in STD_LOGIC_VECTOR(10 downto 0);
+        countClk : in STD_LOGIC;
         r1out : out STD_LOGIC_VECTOR(7 downto 0);
         r2out : out STD_LOGIC_VECTOR(7 downto 0);
         g1out : out STD_LOGIC_VECTOR(7 downto 0);
@@ -126,7 +127,8 @@ component color_processor
            g1out : out STD_LOGIC;
            g2out : out STD_LOGIC;
            b1out : out STD_LOGIC;
-           b2out : out STD_LOGIC);
+           b2out : out STD_LOGIC;
+           clkOut : out STD_LOGIC);
 end component;
 
 signal rst : STD_LOGIC;
@@ -144,6 +146,7 @@ signal g2MemToColor : STD_LOGIC_VECTOR(7 downto 0);
 signal b1MemToColor : STD_LOGIC_VECTOR(7 downto 0);
 signal b2MemToColor : STD_LOGIC_VECTOR(7 downto 0);
 signal screenToColor : STD_LOGIC;
+signal frameClk : STD_LOGIC;
 
 begin
 
@@ -197,6 +200,7 @@ clk_reduced : clk_50 PORT MAP (
 mem : memory PORT MAP (
                     clk => p_clk,
                     adr => addra,
+                    countClk => frameClk,
                     r1out => r1MemToColor,
                     r2out => r2MemToColor,
                     g1out => g1MemToColor,
@@ -219,6 +223,7 @@ color : color_processor PORT MAP (
                     g1out => g1,
                     g2out => g2,
                     b1out => b1,
-                    b2out => b2
+                    b2out => b2,
+                    clkOut => frameClk
                     );
 end Structural;

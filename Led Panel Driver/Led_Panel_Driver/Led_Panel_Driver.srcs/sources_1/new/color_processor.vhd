@@ -45,7 +45,8 @@ entity color_processor is
            g1out : out STD_LOGIC;
            g2out : out STD_LOGIC;
            b1out : out STD_LOGIC;
-           b2out : out STD_LOGIC);
+           b2out : out STD_LOGIC;
+           clkOut : out STD_LOGIC);
 end color_processor;
 
 architecture Behavioral of color_processor is
@@ -59,6 +60,12 @@ counter : process(clk, rst) begin
         count <= "00000000";
     elsif(rising_edge(clk))then
         count <= count + 1;
+        
+        if(count = "11111111") then
+            clkOut <= '1';
+        else
+            clkOut <= '0';
+        end if;
     end if;
 end process;
 
