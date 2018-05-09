@@ -33,12 +33,14 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity counter_5_bit is
     Port ( clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
            la : out STD_LOGIC;
            lb : out STD_LOGIC;
            lc : out STD_LOGIC;
            ld : out STD_LOGIC;
            le : out STD_LOGIC;
-           rst : in STD_LOGIC);
+           screen : out STD_LOGIC
+           );
 end counter_5_bit;
 
 architecture Behavioral of counter_5_bit is
@@ -53,6 +55,13 @@ process(clk, rst) begin
     elsif(rising_edge(clk))then
                 count_internal <= count_internal + 1;        
     end if;
+    
+    if(count_internal = "11111") then
+        screen <= '1';
+    else
+        screen <= '0';
+    end if;
+    
 end process;
 
     la <= STD_LOGIC(count_internal(0));
@@ -60,5 +69,7 @@ end process;
     lc <= STD_LOGIC(count_internal(2));
     ld <= STD_LOGIC(count_internal(3));
     le <= STD_LOGIC(count_internal(4));
+    
+    
 
 end Behavioral;

@@ -71,7 +71,9 @@ component counter_5_bit
        lb : out STD_LOGIC;
        lc : out STD_LOGIC;
        ld : out STD_LOGIC;
-       le : out STD_LOGIC);
+       le : out STD_LOGIC;
+       screen : out STD_LOGIC
+       );
 end component;
 
 component counter_8_bit
@@ -93,44 +95,55 @@ component clk_50
        clk_out1 : out STD_LOGIC);
 end component;
 
-component clk_divider
-    Port(clk : in STD_LOGIC;
-        output : out STD_LOGIC);
-end component;
+--component clk_divider
+--    Port(clk : in STD_LOGIC;
+--        output : out STD_LOGIC);
+--end component;
 
 component memory
     Port(clk : in STD_LOGIC;
         adr : in STD_LOGIC_VECTOR(10 downto 0);
-        r1out : out STD_LOGIC;
-        r2out : out STD_LOGIC;
-        g1out : out STD_LOGIC;
-        g2out : out STD_LOGIC;
-        b1out : out STD_LOGIC;
-        b2out : out STD_LOGIC);
+        r1out : out STD_LOGIC_VECTOR(7 downto 0);
+        r2out : out STD_LOGIC_VECTOR(7 downto 0);
+        g1out : out STD_LOGIC_VECTOR(7 downto 0);
+        g2out : out STD_LOGIC_VECTOR(7 downto 0);
+        b1out : out STD_LOGIC_VECTOR(7 downto 0);
+        b2out : out STD_LOGIC_VECTOR(7 downto 0)
+        );
 end component;
 
---component blk_mem_gen_0
---    Port (addra : in STD_LOGIC_VECTOR(11 downto 0);
---       clka : in STD_LOGIC;
---       douta : out STD_LOGIC;
---       addrb : in STD_LOGIC_VECTOR(11 downto 0);
---       clkb : in STD_LOGIC;
---       doutb : out STD_LOGIC);
---end component;
-
---component inv
---    Port (inInv : in STD_LOGIC;
---       outInv : out STD_LOGIC);
---end component;
+component color_processor
+    Port ( r1 : in STD_LOGIC_VECTOR (7 downto 0);
+           r2 : in STD_LOGIC_VECTOR (7 downto 0);
+           g1 : in STD_LOGIC_VECTOR (7 downto 0);
+           g2 : in STD_LOGIC_VECTOR (7 downto 0);
+           b1 : in STD_LOGIC_VECTOR (7 downto 0);
+           b2 : in STD_LOGIC_VECTOR (7 downto 0);
+           clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           r1out : out STD_LOGIC;
+           r2out : out STD_LOGIC;
+           g1out : out STD_LOGIC;
+           g2out : out STD_LOGIC;
+           b1out : out STD_LOGIC;
+           b2out : out STD_LOGIC);
+end component;
 
 signal rst : STD_LOGIC;
 signal rowToClk : STD_LOGIC;
 signal state_counter : STD_LOGIC_VECTOR(7 downto 0);
 signal clk_dividerToCount8 : STD_LOGIC;
 signal p_clk : STD_LOGIC;
---signal p_clk_inv : STD_LOGIC;
 signal addra : STD_LOGIC_VECTOR(10 downto 0);
 signal clk50ToDivider : STD_LOGIC;
+
+signal r1MemToColor : STD_LOGIC_VECTOR(7 downto 0);
+signal r2MemToColor : STD_LOGIC_VECTOR(7 downto 0);
+signal g1MemToColor : STD_LOGIC_VECTOR(7 downto 0);
+signal g2MemToColor : STD_LOGIC_VECTOR(7 downto 0);
+signal b1MemToColor : STD_LOGIC_VECTOR(7 downto 0);
+signal b2MemToColor : STD_LOGIC_VECTOR(7 downto 0);
+signal screenToColor : STD_LOGIC;
 
 begin
 
@@ -141,7 +154,8 @@ state : state_machine PORT MAP(
                     row => rowToClk,
                     oe => oe,
                     lat => lat,
-                    p_clk => p_clk);
+                    p_clk => p_clk
+                    );
                     
        p_clk_out <= p_clk;
        
@@ -152,13 +166,16 @@ bit5 : counter_5_bit PORT MAP (
                     lb => lb,
                     lc => lc,
                     ld => ld,
-                    le => le);
+                    le => le,
+                    screen => screenToColor
+                    );
 
 bit8 : counter_8_bit PORT MAP (
                     clk => clk_dividerToCount8,
                     rst => rst,
                     global_rst => global_rst,
-                    count => state_counter);
+                    count => state_counter
+                    );
 
 bit11 : counter_11_bit PORT MAP (
                     clk => p_clk,
@@ -168,31 +185,40 @@ bit11 : counter_11_bit PORT MAP (
 clk_reduced : clk_50 PORT MAP (
                     clk_in1 => Clk,
                     reset => global_rst,
-                    clk_out1 => clk50ToDivider);
+                    --clk_out1 => clk50ToDivider
+                    clk_out1 => clk_dividerToCount8
+                    );
                     
-clk_reduced_further : clk_divider PORT MAP (
-                    clk => clk50ToDivider,
-                    output => clk_dividerToCount8);
+--clk_reduced_further : clk_divider PORT MAP (
+--                    clk => clk50ToDivider,
+--                    output => clk_dividerToCount8
+--                    );
 
 mem : memory PORT MAP (
                     clk => p_clk,
                     adr => addra,
+                    r1out => r1MemToColor,
+                    r2out => r2MemToColor,
+                    g1out => g1MemToColor,
+                    g2out => g2MemToColor,
+                    b1out => b1MemToColor,
+                    b2out => b2MemToColor
+                    );
+                    
+color : color_processor PORT MAP (
+                    r1 => r1MemToColor,
+                    r2 => r2MemToColor,
+                    g1 => g1MemToColor,
+                    g2 => g2MemToColor,
+                    b1 => b1MemToColor,
+                    b2 => b2MemToColor,
+                    clk => screenToColor,
+                    rst => global_rst,
                     r1out => r1,
                     r2out => r2,
                     g1out => g1,
                     g2out => g2,
                     b1out => b1,
-                    b2out => b2);
-                    
---p_clk_inverted : inv PORT MAP (
---                    inInv => p_clk,
---                    outInv => p_clk_inv);
-                    
---memory : blk_mem_gen_0 PORT MAP (
---                    addra => addra,
---                    clka => p_clk_inv,
---                    douta => r1,
---                    addrb => addrb,
---                    clkb => p_clk_inv,
---                    doutb => r2);
+                    b2out => b2
+                    );
 end Structural;

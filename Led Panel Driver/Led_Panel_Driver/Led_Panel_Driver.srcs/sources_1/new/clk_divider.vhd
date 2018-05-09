@@ -42,7 +42,7 @@ begin
     process(clk) begin
         if(rising_edge(clk)) then
             counter <= counter + 1;
-            output <= counter(3);
+            output <= counter(1);
         end if;
     end process;
 
