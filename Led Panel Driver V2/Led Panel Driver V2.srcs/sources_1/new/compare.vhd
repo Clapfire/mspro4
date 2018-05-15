@@ -43,7 +43,7 @@ architecture Behavioral of compare is
 begin
     process(clk) begin
         if(falling_edge(clk)) then
-            if(std_logic_vector("11111"- unsigned(a)) < b) then
+            if(std_logic_vector("11111"- unsigned(a)) = b) then
                 output <= '1';
             else
                 output <= '0';
