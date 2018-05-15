@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 05/15/2018 09:10:44 AM
+-- Create Date: 05/15/2018 11:11:24 AM
 -- Design Name: 
--- Module Name: compare - Behavioral
+-- Module Name: clk_devider - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,25 +31,22 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity compare is
-    Port ( a : in STD_LOGIC_VECTOR (4 downto 0);
-           b : in STD_LOGIC_VECTOR (4 downto 0);
-           clk : in std_logic;
-           output : out STD_LOGIC);
-end compare;
+entity clk_divider is
+    Port ( clk_in : in STD_LOGIC;
+           clk_out : out STD_LOGIC;
+           clk_out_2 : out STD_LOGIC);
+end clk_divider;
 
-architecture Behavioral of compare is
-
+architecture Behavioral of clk_divider is
+    signal count: unsigned(25 downto 0);
 begin
-    process(clk) begin
-        if(falling_edge(clk)) then
-            if(std_logic_vector("11111"- unsigned(a)) < b) then
-                output <= '1';
-            else
-                output <= '0';
-            end if;
+    process(clk_in) begin
+        if(rising_edge(clk_in)) then
+            count <= count + 1;
         end if;
     end process;
-
+    
+    clk_out <= std_logic(count(8));
+    clk_out_2 <= std_logic(count(25));
 
 end Behavioral;

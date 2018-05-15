@@ -53,7 +53,6 @@ begin
         end if;
     end process;
     
-    read_proc : process(write_clk) begin
-        data_out <= ram_0(conv_integer(read_adr));
-    end process;
+    data_out <= ram_0(conv_integer(read_adr));
+    
 end Behavioral;

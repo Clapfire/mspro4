@@ -48,4 +48,6 @@ begin
     end if;
  end process;
  
+ output <= std_logic_vector(count);
+ 
 end Behavioral;

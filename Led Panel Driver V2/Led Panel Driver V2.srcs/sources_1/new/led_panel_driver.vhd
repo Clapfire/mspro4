@@ -39,7 +39,7 @@ entity led_panel_driver is
            sw2 : in STD_LOGIC;
            sw3 : in STD_LOGIC;
            sw4 : in STD_LOGIC;
-           button : in STD_LOGIC;
+           --button : in STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
            la : out STD_LOGIC;
@@ -92,19 +92,34 @@ architecture Structural of led_panel_driver is
                le : out STD_LOGIC);
     end component;
     
-    component audio_mem 
-        Port ( write_clk : in STD_LOGIC;
-               rst : in std_logic;
-               data_in : in STD_LOGIC_VECTOR (4 downto 0);
-               read_adr : in STD_LOGIC_VECTOR (5 downto 0);
-               data_out : out STD_LOGIC_VECTOR (4 downto 0));
-    end component;
+--    component audio_mem 
+--        Port ( write_clk : in STD_LOGIC;
+--               rst : in std_logic;
+--               data_in : in STD_LOGIC_VECTOR (4 downto 0);
+--               read_adr : in STD_LOGIC_VECTOR (5 downto 0);
+--               data_out : out STD_LOGIC_VECTOR (4 downto 0));
+--    end component;
     
     component compare 
         Port ( a : in STD_LOGIC_VECTOR (4 downto 0);
                b : in STD_LOGIC_VECTOR (4 downto 0);
+               clk : in std_logic;
                output : out STD_LOGIC);
     end component;
+    
+    component clk_divider 
+        Port ( clk_in : in STD_LOGIC;
+               clk_out : out STD_LOGIC;
+               clk_out_2 : out STD_LOGIC);
+    end component; 
+    
+    --testing
+    component rom
+        Port ( read_adr : in STD_LOGIC_VECTOR(5 downto 0);
+               data_out : out STD_LOGIC_VECTOR(4 downto 0)
+               );
+    end component;
+    --testing
     
     signal state_count : std_logic_vector(7 downto 0);
     signal count_rst :std_logic;
@@ -115,12 +130,13 @@ architecture Structural of led_panel_driver is
     signal switches: std_logic_vector(4 downto 0) := sw4 & sw3 & sw2 & sw1 & sw0;
     signal audio_1_out : std_logic_vector(4 downto 0);
     signal colors : std_logic;
-    
+    signal reduced_clk : std_logic;
+    signal reduced_clk_2 : std_logic;
     
 begin
         
     state_counter_1 : state_counter port map(
-        global_clk => global_clk,
+        global_clk => reduced_clk,
         global_rst => global_rst,
         rst => count_rst,
         state_count => state_count   
@@ -155,19 +171,31 @@ begin
         le => le
     );
     
-    audio_mem_1 : audio_mem port map(
-        write_clk => button,
-        rst => global_rst,
-        data_in => switches,
-        read_adr => c,
-        data_out => audio_1_out
-    );
+--    audio_mem_1 : audio_mem port map(
+--        write_clk => reduced_clk_2,
+--        rst => global_rst,
+--        data_in => switches,
+--        read_adr => c,
+--        data_out => audio_1_out
+--    );
     
     compare_1 : compare port map(
-        a => r,
-        b => audio_1_out,
+        a => audio_1_out,
+        b => r,
+        clk => p_clk_signal,
         output => colors
     );
+    
+    clk_divider_1 : clk_divider port map(
+        clk_in => global_clk,
+        clk_out => reduced_clk,
+        clk_out_2 => reduced_clk_2
+    );
+    
+    test_rom : rom port map(
+        read_adr => c,
+        data_out => audio_1_out
+        );
     
     r1 <= colors;
     r2 <= colors;
