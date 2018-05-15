@@ -48,7 +48,17 @@ entity logic is
            g1 : out STD_LOGIC;
            g2 : out STD_LOGIC;
            b1 : out STD_LOGIC;
-           b2 : out STD_LOGIC);
+           b2 : out STD_LOGIC;
+           
+           --testing
+           Dip_SW0 : in STD_LOGIC;
+           Dip_SW1 : in STD_LOGIC;
+           Dip_SW2 : in STD_LOGIC;
+           Dip_SW3 : in STD_LOGIC;
+           Dip_SW4 : in STD_LOGIC;
+           
+           up : in STD_LOGIC
+           );
            --clk_test : out STD_LOGIC);
 end logic;
 
@@ -100,9 +110,49 @@ end component;
 --        output : out STD_LOGIC);
 --end component;
 
+component column_counter
+    port(clk : in STD_LOGIC;
+        rst : in STD_LOGIC;
+        c_count : out STD_LOGIC_VECTOR(5 downto 0)
+        );
+end component;
+
+component row_counter
+    port(clk : in STD_LOGIC;
+        rst : in STD_LOGIC;
+        r_count_1 : out STD_LOGIC_VECTOR(5 downto 0);
+        r_count_2 : out STD_LOGIC_VECTOR(5 downto 0)
+        );
+end component;
+
+component concater
+    Port ( row : in STD_LOGIC_VECTOR (5 downto 0);
+           column : in STD_LOGIC_VECTOR (5 downto 0);
+           output : out STD_LOGIC_VECTOR (10 downto 0));
+end component;
+
+component bar_comparator
+    Port ( row : in STD_LOGIC_VECTOR (5 downto 0);
+           level : in STD_LOGIC_VECTOR (4 downto 0);
+           output : out STD_LOGIC);
+end component;
+
+component circular_buff
+    Port (write_clk : in STD_LOGIC;
+        rst : in STD_LOGIC;
+        data_in : in STD_LOGIC_VECTOR(4 downto 0);
+        read_adr : in STD_LOGIC_VECTOR(5 downto 0);
+        data_out : out STD_LOGIC_VECTOR(4 downto 0)
+        );
+end component;
+
 component memory
     Port(clk : in STD_LOGIC;
-        adr : in STD_LOGIC_VECTOR(10 downto 0);
+        read_adr : in STD_LOGIC_VECTOR(10 downto 0);
+        write_adr : in STD_LOGIC_VECTOR(10 downto 0);
+        write_adr2 : in STD_LOGIC_VECTOR(10 downto 0);
+        dat_in_1 : in STD_LOGIC;
+        dat_in_2 : in STD_LOGIC;
         countClk : in STD_LOGIC;
         r1out : out STD_LOGIC_VECTOR(7 downto 0);
         r2out : out STD_LOGIC_VECTOR(7 downto 0);
@@ -128,7 +178,19 @@ component color_processor
            g2out : out STD_LOGIC;
            b1out : out STD_LOGIC;
            b2out : out STD_LOGIC;
-           clkOut : out STD_LOGIC);
+           clkOut : out STD_LOGIC
+           );
+end component;
+
+--testing
+component switches
+    Port(sw0 : in STD_LOGIC;
+        sw1 : in STD_LOGIC;
+        sw2 : in STD_LOGIC;
+        sw3 : in STD_LOGIC;
+        sw4 : in STD_LOGIC;
+        switches : out STD_LOGIC_VECTOR(4 downto 0)
+        );
 end component;
 
 signal rst : STD_LOGIC;
@@ -147,6 +209,19 @@ signal b1MemToColor : STD_LOGIC_VECTOR(7 downto 0);
 signal b2MemToColor : STD_LOGIC_VECTOR(7 downto 0);
 signal screenToColor : STD_LOGIC;
 signal frameClk : STD_LOGIC;
+
+signal column_count : STD_LOGIC_VECTOR(5 downto 0);
+signal row_count_1 : STD_LOGIC_VECTOR(5 downto 0);
+signal row_count_2 : STD_LOGIC_VECTOR(5 downto 0);
+
+signal write_adr_1 : STD_LOGIC_VECTOR(10 downto 0);
+signal write_adr_2 : STD_LOGIC_VECTOR(10 downto 0);
+signal data_1 : STD_LOGIC;
+signal data_2 : STD_LOGIC;
+signal level_1 : STD_LOGIC_VECTOR(4 downto 0);
+signal level_2 : STD_LOGIC_VECTOR(4 downto 0);
+
+signal switches_output : STD_LOGIC_VECTOR(4 downto 0);
 
 begin
 
@@ -197,9 +272,58 @@ clk_reduced : clk_50 PORT MAP (
 --                    output => clk_dividerToCount8
 --                    );
 
+c_counter : column_counter PORT MAP (
+                    clk => p_clk,
+                    rst => global_rst,
+                    c_count => column_count
+                    );
+                    
+r_counter : row_counter PORT MAP (
+                    clk => p_clk,
+                    rst => global_rst,
+                    r_count_1 => row_count_1,
+                    r_count_2 => row_count_2
+                    );
+
+concate_1 : concater PORT MAP (
+                    row => row_count_1,
+                    column => column_count,
+                    output => write_adr_1
+                    );
+                    
+concate_2 : concater PORT MAP (
+                    row => row_count_2,
+                    column => column_count,
+                    output => write_adr_2
+                    );
+                    
+compare_1 : bar_comparator PORT MAP(
+                    row => row_count_1,
+                    level => level_1,
+                    output => data_1
+                    );
+
+compare_2 : bar_comparator PORT MAP(
+                    row => row_count_1,
+                    level => level_2,
+                    output => data_2
+                    );
+
+circular_buffer : circular_buff PORT MAP(
+                    write_clk => up,
+                    rst => global_rst,
+                    data_in => switches_output,
+                    read_adr => column_count,
+                    data_out => level_1
+                    );
+
 mem : memory PORT MAP (
                     clk => p_clk,
-                    adr => addra,
+                    read_adr => addra,
+                    write_adr => write_adr_1,
+                    write_adr2 => write_adr_2,
+                    dat_in_1 => data_1,
+                    dat_in_2 => data_2,
                     countClk => frameClk,
                     r1out => r1MemToColor,
                     r2out => r2MemToColor,
@@ -225,5 +349,14 @@ color : color_processor PORT MAP (
                     b1out => b1,
                     b2out => b2,
                     clkOut => frameClk
+                    );
+                    
+switches_1 : switches PORT MAP(
+                    sw0 => Dip_SW0,
+                    sw1 => Dip_SW1,
+                    sw2 => Dip_SW2,
+                    sw3 => Dip_SW3,
+                    sw4 => Dip_SW4,
+                    switches => switches_output
                     );
 end Structural;
