@@ -39,7 +39,7 @@ entity led_panel_driver is
            sw2 : in STD_LOGIC;
            sw3 : in STD_LOGIC;
            sw4 : in STD_LOGIC;
-           --button : in STD_LOGIC;
+           button : in STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
            la : out STD_LOGIC;
@@ -99,6 +99,24 @@ architecture Structural of led_panel_driver is
 --               read_adr : in STD_LOGIC_VECTOR (5 downto 0);
 --               data_out : out STD_LOGIC_VECTOR (4 downto 0));
 --    end component;
+
+    component circular_counter
+        Port ( clk : in STD_LOGIC;
+               rst : in STD_LOGIC;
+               output : out STD_LOGIC_VECTOR(5 downto 0)
+               );
+    end component;
+    
+    component audio_block_mem
+        Port ( addra : in STD_LOGIC_VECTOR(5 downto 0);
+               clka : in STD_LOGIC;
+               dina : in STD_LOGIC_VECTOR(4 downto 0);
+               wea : in STD_LOGIC;
+               addrb : in STD_LOGIC_VECTOR(5 downto 0);
+               clkb : in STD_LOGIC;
+               doutb : out STD_LOGIC_VECTOR(4 downto 0)
+               );
+    end component;
     
     component compare 
         Port ( a : in STD_LOGIC_VECTOR (4 downto 0);
@@ -114,11 +132,11 @@ architecture Structural of led_panel_driver is
     end component; 
     
     --testing
-    component rom
-        Port ( read_adr : in STD_LOGIC_VECTOR(5 downto 0);
-               data_out : out STD_LOGIC_VECTOR(4 downto 0)
-               );
-    end component;
+--    component rom
+--        Port ( read_adr : in STD_LOGIC_VECTOR(5 downto 0);
+--               data_out : out STD_LOGIC_VECTOR(4 downto 0)
+--               );
+--    end component;
     --testing
     
     signal state_count : std_logic_vector(7 downto 0);
@@ -132,6 +150,8 @@ architecture Structural of led_panel_driver is
     signal colors : std_logic;
     signal reduced_clk : std_logic;
     signal reduced_clk_2 : std_logic;
+    
+    signal memory_write_adr : std_logic_vector(5 downto 0);
     
 begin
         
@@ -178,6 +198,21 @@ begin
 --        read_adr => c,
 --        data_out => audio_1_out
 --    );
+    circle_counter_1 : circular_counter port map(
+        clk => reduced_clk_2,
+        rst => global_rst,
+        output => memory_write_adr
+        );
+
+    mem_L : audio_block_mem port map(
+        addra => memory_write_adr,
+        clka => reduced_clk_2,
+        dina => switches,
+        wea => '1',
+        addrb => c,
+        clkb => p_clk_signal,
+        doutb => audio_1_out
+        );
     
     compare_1 : compare port map(
         a => audio_1_out,
@@ -192,10 +227,10 @@ begin
         clk_out_2 => reduced_clk_2
     );
     
-    test_rom : rom port map(
-        read_adr => c,
-        data_out => audio_1_out
-        );
+--    test_rom : rom port map(
+--        read_adr => c,
+--        data_out => audio_1_out
+--        );
     
     r1 <= colors;
     r2 <= colors;
