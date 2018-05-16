@@ -34,22 +34,32 @@ use IEEE.NUMERIC_STD.ALL;
 entity compare is
     Port ( a : in STD_LOGIC_VECTOR (4 downto 0);
            b : in STD_LOGIC_VECTOR (4 downto 0);
-           clk : in std_logic;
+           clk : in STD_LOGIC;
+           sw1 : in STD_LOGIC;
            output : out STD_LOGIC);
 end compare;
 
 architecture Behavioral of compare is
 
 begin
-    process(clk) begin
-        if(falling_edge(clk)) then
-            if(std_logic_vector("11111"- unsigned(a)) < b) then
+process(clk) begin
+    
+    if(falling_edge(clk)) then
+        if(sw1 = '1') then
+            if(std_logic_vector("01111"- signed(a)) <= b) then
+                output <= '1';
+            else
+                output <= '0';
+            end if;
+        else
+            if(std_logic_vector("01111"- signed(a)) = b) then
                 output <= '1';
             else
                 output <= '0';
             end if;
         end if;
-    end process;
-
+    end if;
+    
+end process;
 
 end Behavioral;

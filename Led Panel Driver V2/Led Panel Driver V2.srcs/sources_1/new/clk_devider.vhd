@@ -47,6 +47,6 @@ begin
     end process;
     
     clk_out <= std_logic(count(2));
-    clk_out_2 <= std_logic(count(24));
+    clk_out_2 <= std_logic(count(19));
 
 end Behavioral;

@@ -43,7 +43,7 @@ begin
  process(clk, rst) begin
     if(rst = '1') then
         count <= "000000";
-    elsif(rising_edge(clk)) then
+    elsif(falling_edge(clk)) then
         count <= count + 1;
     end if;
  end process;

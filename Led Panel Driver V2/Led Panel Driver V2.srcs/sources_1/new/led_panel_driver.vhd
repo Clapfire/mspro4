@@ -35,12 +35,13 @@ entity led_panel_driver is
     Port ( global_clk : in STD_LOGIC;
            global_rst : in STD_LOGIC;
 --           sw0 : in STD_LOGIC;
---           sw1 : in STD_LOGIC;
+           sw1 : in STD_LOGIC;
 --           sw2 : in STD_LOGIC;
 --           sw3 : in STD_LOGIC;
 --           sw4 : in STD_LOGIC;
 --           button : in STD_LOGIC;
            left_channel : in STD_LOGIC_VECTOR(4 downto 0);
+           right_channel : in STD_LOGIC_VECTOR(4 downto 0);
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
            la : out STD_LOGIC;
@@ -101,12 +102,12 @@ architecture Structural of led_panel_driver is
 --               data_out : out STD_LOGIC_VECTOR (4 downto 0));
 --    end component;
 
---    component circular_counter
---        Port ( clk : in STD_LOGIC;
---               rst : in STD_LOGIC;
---               output : out STD_LOGIC_VECTOR(5 downto 0)
---               );
---    end component;
+    component circular_counter
+        Port ( clk : in STD_LOGIC;
+               rst : in STD_LOGIC;
+               output : out STD_LOGIC_VECTOR(5 downto 0)
+               );
+    end component;
     
     component audio_block_mem
         Port ( addra : in STD_LOGIC_VECTOR(5 downto 0);
@@ -122,7 +123,8 @@ architecture Structural of led_panel_driver is
     component compare 
         Port ( a : in STD_LOGIC_VECTOR (4 downto 0);
                b : in STD_LOGIC_VECTOR (4 downto 0);
-               clk : in std_logic;
+               clk : in STD_LOGIC;
+               sw1 : in STD_LOGIC;
                output : out STD_LOGIC);
     end component;
     
@@ -148,7 +150,9 @@ architecture Structural of led_panel_driver is
     signal c :std_logic_vector(5 downto 0);
 --    signal switches: std_logic_vector(4 downto 0) := sw4 & sw3 & sw2 & sw1 & sw0;
     signal audio_1_out : std_logic_vector(4 downto 0);
-    signal colors : std_logic;
+    signal audio_2_out : std_logic_vector(4 downto 0);
+    signal colors_1 : std_logic;
+    signal colors_2 : std_logic;
     signal reduced_clk : std_logic;
     signal reduced_clk_2 : std_logic;
     
@@ -199,11 +203,12 @@ begin
 --        read_adr => c,
 --        data_out => audio_1_out
 --    );
---    circle_counter_1 : circular_counter port map(
---        clk => reduced_clk_2,
---        rst => global_rst,
---        output => memory_write_adr
---        );
+
+    circle_counter_1 : circular_counter port map(
+        clk => reduced_clk_2,
+        rst => global_rst,
+        output => memory_write_adr
+        );
 
     mem_L : audio_block_mem port map(
         addra => memory_write_adr,
@@ -214,12 +219,31 @@ begin
         clkb => p_clk_signal,
         doutb => audio_1_out
         );
+        
+        mem_R : audio_block_mem port map(
+        addra => memory_write_adr,
+        clka => reduced_clk_2,
+        dina => right_channel,
+        wea => '1',
+        addrb => c,
+        clkb => p_clk_signal,
+        doutb => audio_2_out
+        );
     
     compare_1 : compare port map(
         a => audio_1_out,
         b => r,
         clk => p_clk_signal,
-        output => colors
+        sw1 => SW1,
+        output => colors_1
+    );
+    
+    compare_2 : compare port map(
+        a => audio_2_out,
+        b => r,
+        clk => p_clk_signal,
+        sw1 => SW1,
+        output => colors_2
     );
     
     clk_divider_1 : clk_divider port map(
@@ -233,11 +257,11 @@ begin
 --        data_out => audio_1_out
 --        );
     
-    r1 <= colors;
-    r2 <= colors;
-    g1 <= colors;
-    g2 <= colors;
-    b1 <= colors;
-    b2 <= colors;
+    r1 <= colors_1;
+    r2 <= colors_2;
+    g1 <= colors_1;
+    g2 <= colors_2;
+    b1 <= colors_1;
+    b2 <= colors_2;
 
 end Structural;
