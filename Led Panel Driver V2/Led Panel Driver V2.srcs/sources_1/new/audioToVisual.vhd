@@ -47,6 +47,7 @@ entity audioToVisual is
            AC_SCK   : out   STD_LOGIC;
            AC_SDA   : inout STD_LOGIC;
            SW1 : in STD_LOGIC;
+           SW2 : in STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
            la : out STD_LOGIC;
@@ -191,9 +192,22 @@ BUFG_inst : BUFG
 transfer_audio: process(clk_100)
 begin
     if(rising_edge(clk_100)) then
+        hphone_valid <= '0';
+        hphone_l <= (others => '0');
+        hphone_r <= (others => '0');
         if (new_sample = '1') then
             line_in_l_5bit <= line_in_l(23 downto 19);
             line_in_r_5bit <= line_in_r(23 downto 19);
+            
+            hphone_valid <= '1';
+            
+            if (SW2 = '1') then
+                hphone_l <= line_in_l(23 downto 19) & "0000000000000000000";
+                hphone_r <= line_in_r(23 downto 19) & "0000000000000000000";
+            else
+                hphone_l <= line_in_l;
+                hphone_r <= line_in_r;
+            end if;   
         end if;
     end if;
 end process;
