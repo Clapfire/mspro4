@@ -3,6 +3,7 @@
 #set_property IOSTANDARD LVCMOS33 [get_ports global_clk]
 set_property PACKAGE_PIN P16 [get_ports global_rst]
 set_property IOSTANDARD LVCMOS18 [get_ports global_rst]
+#set_property PACKAGE_PIN F22 [get_ports Dip_SW0]
 #set_property IOSTANDARD LVCMOS18 [get_ports sw0]
 set_property PACKAGE_PIN G22 [get_ports SW1]
 set_property IOSTANDARD LVCMOS18 [get_ports SW1]

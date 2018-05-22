@@ -54,6 +54,10 @@ process(clk) begin
         else
             if(std_logic_vector("01111"- signed(a)) = b) then
                 output <= '1';
+            elsif(std_logic_vector("01111" - signed(a)) = std_logic_vector((signed(b) - "00001"))) then
+                output <= '1';
+            elsif(std_logic_vector("01111" - signed(a)) = std_logic_vector((signed(b) + "00001"))) then
+                output <= '1';
             else
                 output <= '0';
             end if;
