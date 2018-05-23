@@ -37,8 +37,11 @@ entity led_panel_driver is
 --           sw0 : in STD_LOGIC;
            sw1 : in STD_LOGIC;
 --           sw2 : in STD_LOGIC;
---           sw3 : in STD_LOGIC;
---           sw4 : in STD_LOGIC;
+           sw3 : in STD_LOGIC;
+           sw4 : in STD_LOGIC;
+           sw5 : in STD_LOGIC;
+           sw6 : in STD_LOGIC;
+           sw7 : in STD_LOGIC;
 --           button : in STD_LOGIC;
            left_channel : in STD_LOGIC_VECTOR(4 downto 0);
            right_channel : in STD_LOGIC_VECTOR(4 downto 0);
@@ -93,14 +96,6 @@ architecture Structural of led_panel_driver is
                ld : out STD_LOGIC;
                le : out STD_LOGIC);
     end component;
-    
---    component audio_mem 
---        Port ( write_clk : in STD_LOGIC;
---               rst : in std_logic;
---               data_in : in STD_LOGIC_VECTOR (4 downto 0);
---               read_adr : in STD_LOGIC_VECTOR (5 downto 0);
---               data_out : out STD_LOGIC_VECTOR (4 downto 0));
---    end component;
 
     component circular_counter
         Port ( clk : in STD_LOGIC;
@@ -134,13 +129,21 @@ architecture Structural of led_panel_driver is
                clk_out_2 : out STD_LOGIC);
     end component; 
     
-    --testing
---    component rom
---        Port ( read_adr : in STD_LOGIC_VECTOR(5 downto 0);
---               data_out : out STD_LOGIC_VECTOR(4 downto 0)
---               );
---    end component;
-    --testing
+    component color_mixer
+        Port ( input : in STD_LOGIC;
+               c_count : in STD_LOGIC_VECTOR(5 downto 0);
+               r_count : in STD_LOGIC_VECTOR(4 downto 0);
+               clk : in STD_LOGIC;
+               output : out STD_LOGIC);
+    end component;
+    
+    component color_mixer_reversed
+        Port ( input : in STD_LOGIC;
+               c_count : in STD_LOGIC_VECTOR(5 downto 0);
+               r_count : in STD_LOGIC_VECTOR(4 downto 0);
+               clk : in STD_LOGIC;
+               output : out STD_LOGIC);
+    end component;
     
     signal state_count : std_logic_vector(7 downto 0);
     signal count_rst :std_logic;
@@ -148,11 +151,17 @@ architecture Structural of led_panel_driver is
     signal p_clk_signal :std_logic;
     signal r :std_logic_vector(4 downto 0);
     signal c :std_logic_vector(5 downto 0);
---    signal switches: std_logic_vector(4 downto 0) := sw4 & sw3 & sw2 & sw1 & sw0;
     signal audio_1_out : std_logic_vector(4 downto 0);
     signal audio_2_out : std_logic_vector(4 downto 0);
     signal colors_1 : std_logic;
     signal colors_2 : std_logic;
+    signal red_out : std_logic;
+    signal green_out : std_logic;
+    signal blue_out : std_logic;
+    signal red_out_2 : std_logic;
+    signal green_out_2 : std_logic;
+    signal blue_out_2 : std_logic;
+
     signal reduced_clk : std_logic;
     signal reduced_clk_2 : std_logic;
     
@@ -196,14 +205,6 @@ begin
         le => le
     );
     
---    audio_mem_1 : audio_mem port map(
---        write_clk => reduced_clk_2,
---        rst => global_rst,
---        data_in => switches,
---        read_adr => c,
---        data_out => audio_1_out
---    );
-
     circle_counter_1 : circular_counter port map(
         clk => reduced_clk_2,
         rst => global_rst,
@@ -252,16 +253,44 @@ begin
         clk_out_2 => reduced_clk_2
     );
     
---    test_rom : rom port map(
---        read_adr => c,
---        data_out => audio_1_out
---        );
+    red1 : color_mixer_reversed port map(
+        input => colors_1,
+        c_count => c,
+        r_count => r,
+        clk => p_clk_signal,
+        output => red_out
+    );
     
-    r1 <= colors_1;
-    r2 <= colors_2;
-    g1 <= colors_1;
-    g2 <= colors_2;
-    b1 <= colors_1;
-    b2 <= colors_2;
+    green1 : color_mixer port map(
+        input => colors_1,
+        c_count => c,
+        r_count => r,
+        clk => p_clk_signal,
+        output => green_out
+    );
+    
+    red2 : color_mixer_reversed port map(
+        input => colors_2,
+        c_count => c,
+        r_count => r,
+        clk => p_clk_signal,
+        output => red_out_2
+    );
+    
+    green2 : color_mixer port map(
+        input => colors_2,
+        c_count => c,
+        r_count => r,
+        clk => p_clk_signal,
+        output => green_out_2
+    );
+    
+    
+    r1 <= red_out;
+    r2 <= red_out_2;
+    g1 <= green_out;
+    g2 <= green_out_2;
+    b1 <= '0';
+    b2 <= '0';
 
 end Structural;

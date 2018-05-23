@@ -46,8 +46,13 @@ entity audioToVisual is
            AC_MCLK  : out   STD_LOGIC;
            AC_SCK   : out   STD_LOGIC;
            AC_SDA   : inout STD_LOGIC;
-           SW1 : in STD_LOGIC;
-           SW2 : in STD_LOGIC;
+           sw1 : in STD_LOGIC;
+           sw2 : in STD_LOGIC;
+           sw3 : in STD_LOGIC;
+           sw4 : in STD_LOGIC;
+           sw5 : in STD_LOGIC;
+           sw6 : in STD_LOGIC;
+           sw7 : in STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
            la : out STD_LOGIC;
@@ -98,6 +103,11 @@ COMPONENT led_panel_driver
           left_channel : in STD_LOGIC_VECTOR(4 downto 0);
           right_channel : in STD_LOGIC_VECTOR(4 downto 0);
           sw1 : in STD_LOGIC;
+          sw3 : in STD_LOGIC;
+          sw4 : in STD_LOGIC;
+          sw5 : in STD_LOGIC;
+          sw6 : in STD_LOGIC;
+          sw7 : in STD_LOGIC;
           oe : out STD_LOGIC;
           lat : out STD_LOGIC;
           la : out STD_LOGIC;
@@ -178,7 +188,12 @@ led_driver: led_panel_driver port map (
       g2 => g2,
       b1 => b1,
       b2 => b2,
-      sw1 => SW1,
+      sw1 => sw1,
+      sw3 => sw3,
+      sw4 => sw4,
+      sw5 => sw5,
+      sw6 => sw6,
+      sw7 => sw7,
       left_channel => line_in_l_5bit,
       right_channel => line_in_r_5bit
       );
