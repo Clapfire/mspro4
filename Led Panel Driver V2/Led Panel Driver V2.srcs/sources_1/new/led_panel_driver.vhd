@@ -35,13 +35,13 @@ entity led_panel_driver is
     Port ( global_clk : in STD_LOGIC;
            global_rst : in STD_LOGIC;
 --           sw0 : in STD_LOGIC;
-           sw1 : in STD_LOGIC;
---           sw2 : in STD_LOGIC;
+--           sw1 : in STD_LOGIC;
+           sw2 : in STD_LOGIC;
            sw3 : in STD_LOGIC;
-           sw4 : in STD_LOGIC;
-           sw5 : in STD_LOGIC;
-           sw6 : in STD_LOGIC;
-           sw7 : in STD_LOGIC;
+--           sw4 : in STD_LOGIC;
+--           sw5 : in STD_LOGIC;
+--           sw6 : in STD_LOGIC;
+--           sw7 : in STD_LOGIC;
 --           button : in STD_LOGIC;
            left_channel : in STD_LOGIC_VECTOR(4 downto 0);
            right_channel : in STD_LOGIC_VECTOR(4 downto 0);
@@ -119,8 +119,17 @@ architecture Structural of led_panel_driver is
         Port ( a : in STD_LOGIC_VECTOR (4 downto 0);
                b : in STD_LOGIC_VECTOR (4 downto 0);
                clk : in STD_LOGIC;
-               sw1 : in STD_LOGIC;
+               sw2 : in STD_LOGIC;
                output : out STD_LOGIC);
+    end component;
+    
+    component compare_reversed
+        Port ( a : in STD_LOGIC_VECTOR (4 downto 0);
+               b : in STD_LOGIC_VECTOR (4 downto 0);
+               clk : in STD_LOGIC;
+               sw2 : in STD_LOGIC;
+               output : out STD_LOGIC
+               );
     end component;
     
     component clk_divider 
@@ -154,12 +163,20 @@ architecture Structural of led_panel_driver is
     signal audio_1_out : std_logic_vector(4 downto 0);
     signal audio_2_out : std_logic_vector(4 downto 0);
     signal colors_1 : std_logic;
+    signal colors_1_temp_1 : std_logic;
+    signal colors_1_temp_2 : std_logic;
     signal colors_2 : std_logic;
+    signal colors_2_temp_1 : std_logic;
+    signal colors_2_temp_2 : std_logic;
     signal red_out : std_logic;
+    signal red_out_reversed : std_logic;
     signal green_out : std_logic;
+    signal green_out_reversed : std_logic;
     signal blue_out : std_logic;
     signal red_out_2 : std_logic;
+    signal red_out_2_reversed : std_logic;
     signal green_out_2 : std_logic;
+    signal green_out_2_reversed : std_logic;
     signal blue_out_2 : std_logic;
 
     signal reduced_clk : std_logic;
@@ -221,7 +238,7 @@ begin
         doutb => audio_1_out
         );
         
-        mem_R : audio_block_mem port map(
+     mem_R : audio_block_mem port map(
         addra => memory_write_adr,
         clka => reduced_clk_2,
         dina => right_channel,
@@ -235,17 +252,34 @@ begin
         a => audio_1_out,
         b => r,
         clk => p_clk_signal,
-        sw1 => SW1,
-        output => colors_1
+        sw2 => sw2,
+        output => colors_1_temp_1
+    );
+    
+    compare_1_reversed : compare_reversed port map(
+        a => audio_1_out,
+        b => r,
+        clk => p_clk_signal,
+        sw2 => sw2,
+        output => colors_1_temp_2
     );
     
     compare_2 : compare port map(
         a => audio_2_out,
         b => r,
         clk => p_clk_signal,
-        sw1 => SW1,
-        output => colors_2
+        sw2 => sw2,
+        output => colors_2_temp_1
     );
+    
+    compare_2_reversed : compare_reversed port map(
+        a => audio_2_out,
+        b => r,
+        clk => p_clk_signal,
+        sw2 => sw2,
+        output => colors_2_temp_2
+    );
+
     
     clk_divider_1 : clk_divider port map(
         clk_in => global_clk,
@@ -269,6 +303,22 @@ begin
         output => green_out
     );
     
+    red1_reversed : color_mixer port map(
+        input => colors_1,
+        c_count => c,
+        r_count => r,
+        clk => p_clk_signal,
+        output => red_out_reversed
+    );
+    
+    green1_reversed : color_mixer_reversed port map(
+        input => colors_1,
+        c_count => c,
+        r_count => r,
+        clk => p_clk_signal,
+        output => green_out_reversed
+    );
+    
     red2 : color_mixer_reversed port map(
         input => colors_2,
         c_count => c,
@@ -285,11 +335,31 @@ begin
         output => green_out_2
     );
     
+    red2_reversed : color_mixer port map(
+        input => colors_2,
+        c_count => c,
+        r_count => r,
+        clk => p_clk_signal,
+        output => red_out_2_reversed
+    );
+
+    green2_reversed : color_mixer_reversed port map(
+        input => colors_2,
+        c_count => c,
+        r_count => r,
+        clk => p_clk_signal,
+        output => green_out_2_reversed
+    );
+    
+    colors_1 <= colors_1_temp_1;
+    colors_2 <= colors_2_temp_2 when sw3 = '1' else colors_2_temp_1;
+    r2 <= red_out_2_reversed when sw3 = '1' else red_out_2;
+    g2 <= green_out_2_reversed when sw3 = '1' else green_out_2;
     
     r1 <= red_out;
-    r2 <= red_out_2;
+--    r2 <= red_out_2;
     g1 <= green_out;
-    g2 <= green_out_2;
+--    g2 <= green_out_2;
     b1 <= '0';
     b2 <= '0';
 

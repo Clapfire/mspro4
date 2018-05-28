@@ -46,13 +46,10 @@ entity audioToVisual is
            AC_MCLK  : out   STD_LOGIC;
            AC_SCK   : out   STD_LOGIC;
            AC_SDA   : inout STD_LOGIC;
+           sw0 : in STD_LOGIC;
            sw1 : in STD_LOGIC;
            sw2 : in STD_LOGIC;
            sw3 : in STD_LOGIC;
-           sw4 : in STD_LOGIC;
-           sw5 : in STD_LOGIC;
-           sw6 : in STD_LOGIC;
-           sw7 : in STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
            la : out STD_LOGIC;
@@ -102,12 +99,8 @@ COMPONENT led_panel_driver
           global_rst : in STD_LOGIC;
           left_channel : in STD_LOGIC_VECTOR(4 downto 0);
           right_channel : in STD_LOGIC_VECTOR(4 downto 0);
-          sw1 : in STD_LOGIC;
+          sw2 : in STD_LOGIC;
           sw3 : in STD_LOGIC;
-          sw4 : in STD_LOGIC;
-          sw5 : in STD_LOGIC;
-          sw6 : in STD_LOGIC;
-          sw7 : in STD_LOGIC;
           oe : out STD_LOGIC;
           lat : out STD_LOGIC;
           la : out STD_LOGIC;
@@ -130,6 +123,8 @@ END COMPONENT;
     signal hphone_l, hphone_r : std_logic_vector (23 downto 0);
     signal line_in_l_5bit : std_logic_vector (4 downto 0);
     signal line_in_r_5bit : std_logic_vector (4 downto 0);
+    signal line_in_l_24bit : std_logic_vector (23 downto 0);
+    signal line_in_r_24bit : std_logic_vector (23 downto 0);
     signal hphone_valid: std_logic;
     signal new_sample : std_logic;
     signal sample_clk_48k: std_logic;
@@ -143,6 +138,9 @@ END COMPONENT;
     
     attribute keep of line_in_l : signal is "true";
     attribute keep of line_in_l_5bit : signal is "true";
+    attribute keep of line_in_r_5bit : signal is "true";
+    attribute keep of line_in_l_24bit : signal is "true";
+    attribute keep of line_in_r_24bit : signal is "true";
     attribute keep of line_in_r : signal is "true";
 
 begin
@@ -188,12 +186,8 @@ led_driver: led_panel_driver port map (
       g2 => g2,
       b1 => b1,
       b2 => b2,
-      sw1 => sw1,
+      sw2 => sw2,
       sw3 => sw3,
-      sw4 => sw4,
-      sw5 => sw5,
-      sw6 => sw6,
-      sw7 => sw7,
       left_channel => line_in_l_5bit,
       right_channel => line_in_r_5bit
       );
@@ -211,17 +205,25 @@ begin
         hphone_l <= (others => '0');
         hphone_r <= (others => '0');
         if (new_sample = '1') then
-            line_in_l_5bit <= line_in_l(23 downto 19);
-            line_in_r_5bit <= line_in_r(23 downto 19);
-            
             hphone_valid <= '1';
-            
-            if (SW2 = '1') then
-                hphone_l <= line_in_l(23 downto 19) & "0000000000000000000";
-                hphone_r <= line_in_r(23 downto 19) & "0000000000000000000";
+            if (sw0 = '1') then
+                line_in_l_24bit <= std_logic_vector(signed(line_in_l) + signed(line_in_l));
+                line_in_r_24bit <= std_logic_vector(signed(line_in_r) + signed(line_in_r));
+                line_in_l_5bit <= line_in_l_24bit(23 downto 19);
+                line_in_r_5bit <= line_in_r_24bit(23 downto 19);
             else
-                hphone_l <= line_in_l;
-                hphone_r <= line_in_r;
+                line_in_l_5bit <= line_in_l(23 downto 19);
+                line_in_r_5bit <= line_in_r(23 downto 19);
+                line_in_l_24bit <= line_in_l;
+                line_in_r_24bit <= line_in_r;
+            end if;
+            
+            if (sw1 = '1') then
+                hphone_l <= line_in_l_5bit & "0000000000000000000";
+                hphone_r <= line_in_r_5bit & "0000000000000000000";
+            else
+                hphone_l <= line_in_l_24bit(23 downto 0);
+                hphone_r <= line_in_r_24bit(23 downto 0);
             end if;   
         end if;
     end if;

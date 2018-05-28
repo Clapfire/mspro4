@@ -56,6 +56,6 @@ compare : process(clk) begin
     end if;
 end process;
 
-output <= input when (unsigned(r_count)-1 >= unsigned(count_2)) else '0';
+output <= input when (unsigned(r_count) > unsigned(count_2)) else '0';
     
 end Behavioral;

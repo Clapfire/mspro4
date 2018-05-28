@@ -46,7 +46,7 @@ begin
         end if;
     end process;
     
-    clk_out <= std_logic(count(0));
-    clk_out_2 <= std_logic(count(17));
+    clk_out <= std_logic(count(0)); --drawing frequency
+    clk_out_2 <= std_logic(count(17));  --sampling frequency
 
 end Behavioral;
