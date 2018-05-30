@@ -50,6 +50,15 @@ entity audioToVisual is
            sw1 : in STD_LOGIC;
            sw2 : in STD_LOGIC;
            sw3 : in STD_LOGIC;
+           sw4 : in STD_LOGIC;
+           enc_1_a : in STD_LOGIC;
+           enc_1_b : in STD_LOGIC;
+           enc_1_sw : in STD_LOGIC;
+           enc_1_btn : in STD_LOGIC;
+           enc_2_a : in STD_LOGIC;
+           enc_2_b : in STD_LOGIC;
+           enc_2_sw : in STD_LOGIC;
+           enc_2_btn : in STD_LOGIC;
            oe : out STD_LOGIC;
            lat : out STD_LOGIC;
            la : out STD_LOGIC;
@@ -63,7 +72,15 @@ entity audioToVisual is
            g1 : out STD_LOGIC;
            g2 : out STD_LOGIC;
            b1 : out STD_LOGIC;
-           b2 : out STD_LOGIC
+           b2 : out STD_LOGIC;
+           LED0 : out STD_LOGIC;
+           LED1 : out STD_LOGIC;
+           LED2 : out STD_LOGIC;
+           LED3 : out STD_LOGIC;
+           LED4 : out STD_LOGIC;
+           LED5 : out STD_LOGIC;
+           LED6 : out STD_LOGIC;
+           LED7 : out STD_LOGIC
            );
 end audioToVisual;
 
@@ -101,6 +118,15 @@ COMPONENT led_panel_driver
           right_channel : in STD_LOGIC_VECTOR(4 downto 0);
           sw2 : in STD_LOGIC;
           sw3 : in STD_LOGIC;
+          sw4 : in STD_LOGIC;
+          enc_1_a : in STD_LOGIC;
+          enc_1_b : in STD_LOGIC;
+          enc_1_sw : in STD_LOGIC;
+          enc_1_btn : in STD_LOGIC;
+          enc_2_a : in STD_LOGIC;
+          enc_2_b : in STD_LOGIC;
+          enc_2_sw : in STD_LOGIC;
+          enc_2_btn : in STD_LOGIC;
           oe : out STD_LOGIC;
           lat : out STD_LOGIC;
           la : out STD_LOGIC;
@@ -114,7 +140,15 @@ COMPONENT led_panel_driver
           g1 : out STD_LOGIC;
           g2 : out STD_LOGIC;
           b1 : out STD_LOGIC;
-          b2 : out STD_LOGIC
+          b2 : out STD_LOGIC;
+          LED0 : out STD_LOGIC;
+          LED1 : out STD_LOGIC;
+          LED2 : out STD_LOGIC;
+          LED3 : out STD_LOGIC;
+          LED4 : out STD_LOGIC;
+          LED5 : out STD_LOGIC;
+          LED6 : out STD_LOGIC;
+          LED7 : out STD_LOGIC
           );
 END COMPONENT;
 
@@ -188,8 +222,25 @@ led_driver: led_panel_driver port map (
       b2 => b2,
       sw2 => sw2,
       sw3 => sw3,
+      sw4 => sw4,
+      enc_1_a => enc_1_a,
+      enc_1_b => enc_1_b,
+      enc_1_sw => enc_1_sw,
+      enc_1_btn => enc_1_btn,
+      enc_2_a => enc_2_a,
+      enc_2_b => enc_2_b,
+      enc_2_sw => enc_2_sw,
+      enc_2_btn => enc_2_btn,
       left_channel => line_in_l_5bit,
-      right_channel => line_in_r_5bit
+      right_channel => line_in_r_5bit,
+      LED0 => LED0,
+      LED1 => LED1,
+      LED2 => LED2,
+      LED3 => LED3,
+      LED4 => LED4,
+      LED5 => LED5,
+      LED6 => LED6,
+      LED7 => LED7
       );
 
 BUFG_inst : BUFG
