@@ -35,7 +35,7 @@ use UNISIM.VComponents.all;
 --use UNISIM.VComponents.all;
 
 entity audioToVisual is
-    Port ( clk_100  : in    STD_LOGIC; -- 100 mhz master takt 
+    Port ( clk_100  : in    STD_LOGIC; -- 100 mhz master clk
            global_rst : in  STD_LOGIC;
            AC_ADR0  : out   STD_LOGIC;  -- control signals to ADAU chip
            AC_ADR1  : out   STD_LOGIC;

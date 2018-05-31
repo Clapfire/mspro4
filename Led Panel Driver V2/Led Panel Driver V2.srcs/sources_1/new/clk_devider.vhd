@@ -48,7 +48,7 @@ begin
             count2 <= count2 + 1;
         end if;
         
-        if(unsigned(count2) = unsigned(enc_in & "00000000000000")) then
+        if(unsigned(count2) = unsigned(enc_in & "100000100011")) then
             clk_out_2 <= '1';
             count2 <= (others => '0');
         else
