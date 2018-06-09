@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed May 16 10:59:25 2018
+# Process ID: 4728
+# Current directory: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver V2/Led Panel Driver V2.runs/audio_block_mem_synth_1
+# Command line: vivado.exe -log audio_block_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source audio_block_mem.tcl
+# Log file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver V2/Led Panel Driver V2.runs/audio_block_mem_synth_1/audio_block_mem.vds
+# Journal file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver V2/Led Panel Driver V2.runs/audio_block_mem_synth_1\vivado.jou
+#-----------------------------------------------------------
+source audio_block_mem.tcl -notrace

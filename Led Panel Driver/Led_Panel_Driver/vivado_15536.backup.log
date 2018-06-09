@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Mon May 28 12:13:50 2018
+# Process ID: 15536
+# Current directory: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16260 D:\SDU\4th Semester\Semester Project\mspro4\Led Panel Driver\Led_Panel_Driver\Led_Panel_Driver.xpr
+# Log file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/vivado.log
+# Journal file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 826.625 ; gain = 82.004
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May 28 12:42:42 2018...

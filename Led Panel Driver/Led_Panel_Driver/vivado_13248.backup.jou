@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri Jun  1 09:29:54 2018
+# Process ID: 13248
+# Current directory: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1432 D:\SDU\4th Semester\Semester Project\mspro4\Led Panel Driver\Led_Panel_Driver\Led_Panel_Driver.xpr
+# Log file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/vivado.log
+# Journal file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project -read_only {D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.xpr}
+update_compile_order -fileset sources_1

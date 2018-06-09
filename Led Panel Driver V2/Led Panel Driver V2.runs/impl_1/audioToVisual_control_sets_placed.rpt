@@ -1,0 +1,119 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+| Date         : Wed May 30 15:36:11 2018
+| Host         : DESKTOP-4PILJD1 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file audioToVisual_control_sets_placed.rpt
+| Design       : audioToVisual
+| Device       : xc7z020
+------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    43 |
+| Unused register locations in slices containing registers |   124 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            8 |
+|      2 |            1 |
+|      3 |            1 |
+|      4 |            2 |
+|      5 |            1 |
+|      6 |            1 |
+|      7 |            2 |
+|      8 |           12 |
+|      9 |            1 |
+|     11 |            1 |
+|     13 |            1 |
+|     14 |            1 |
+|    16+ |           11 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              40 |           21 |
+| No           | No                    | Yes                    |              64 |           21 |
+| No           | Yes                   | No                     |              62 |           20 |
+| Yes          | No                    | No                     |             430 |          122 |
+| Yes          | No                    | Yes                    |              16 |            6 |
+| Yes          | Yes                   | No                     |               8 |            1 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+
+|             Clock Signal             |                                Enable Signal                                |                              Set/Reset Signal                              | Slice Load Count | Bel Load Count |
++--------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+
+|  clk_100_buffered                    | led_driver/encoder_2_debouncer/Bout_i_1__0_n_0                              |                                                                            |                1 |              1 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/i2c_sda_t_i_1_n_0        |                                                                            |                1 |              1 |
+|  clk_100_buffered                    | led_driver/encoder_2_debouncer/Aout_i_1__0_n_0                              |                                                                            |                1 |              1 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/i2c_scl_i_1_n_0          |                                                                            |                1 |              1 |
+|  clk_100_buffered                    | led_driver/encoder_1_debouncer/Bout_i_1_n_0                                 |                                                                            |                1 |              1 |
+|  clk_100_buffered                    | led_driver/encoder_2_debouncer/swout_i_1_n_0                                |                                                                            |                1 |              1 |
+|  clk_100_buffered                    | led_driver/encoder_1_debouncer/Aout_i_1_n_0                                 |                                                                            |                1 |              1 |
+|  clk_100_buffered                    | led_driver/encoder_2_debouncer/btnout_i_1_n_0                               |                                                                            |                1 |              1 |
+|  led_driver/encoder_2_debouncer/CLK  |                                                                             |                                                                            |                1 |              2 |
+| ~led_driver/state_counter_1/CLK      |                                                                             |                                                                            |                2 |              3 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/state[3]_i_1_n_0         |                                                                            |                3 |              4 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/i2c_bits_left0           |                                                                            |                2 |              4 |
+|  led_driver/state_counter_1/lat_OBUF |                                                                             | global_rst_IBUF                                                            |                1 |              5 |
+| ~clk                                 |                                                                             | global_rst_IBUF                                                            |                1 |              6 |
+|  clk_100_buffered                    |                                                                             | led_driver/encoder_2_debouncer/eqOp                                        |                3 |              7 |
+|  clk_100_buffered                    |                                                                             | led_driver/encoder_1_debouncer/eqOp                                        |                2 |              7 |
+|  clk_100_buffered                    |                                                                             | global_rst_IBUF                                                            |                3 |              8 |
+|  clk_100_buffered                    | led_driver/color_encoder/b1[7]_i_1_n_0                                      |                                                                            |                3 |              8 |
+|  clk_100_buffered                    | led_driver/color_encoder/g2[7]_i_1_n_0                                      |                                                                            |                3 |              8 |
+|  clk_100_buffered                    | led_driver/color_encoder/g1[7]_i_1_n_0                                      |                                                                            |                3 |              8 |
+|  clk_100_buffered                    | led_driver/color_encoder/r2[7]_i_1_n_0                                      |                                                                            |                3 |              8 |
+|  led_driver/clk_divider_1/CLK        |                                                                             | global_rst_IBUF                                                            |                4 |              8 |
+|  clk_100_buffered                    | led_driver/color_encoder_decoder/EncOut[7]_i_1__0_n_0                       | global_rst_IBUF                                                            |                3 |              8 |
+|  clk_100_buffered                    | led_driver/sampling_encoder_decoder/EncOut[7]_i_1_n_0                       | global_rst_IBUF                                                            |                3 |              8 |
+|  clk_100_buffered                    | led_driver/color_encoder/b2[7]_i_1_n_0                                      |                                                                            |                3 |              8 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2s_data_interface/i2s_lr_last_i_1_n_0 | i_audio/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[39]_i_1_n_0 |                1 |              8 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount[7]_i_1_n_0      |                                                                            |                5 |              8 |
+|  clk_100_buffered                    | led_driver/color_encoder/r1[7]_i_1_n_0                                      |                                                                            |                3 |              8 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/i2c_data[8]_i_1_n_0      |                                                                            |                4 |              9 |
+|  led_driver/state_counter_1/CLK      |                                                                             | global_rst_IBUF                                                            |                5 |             11 |
+|  led_driver/state_counter_1/CLK      | led_driver/pos_counter_1/E[0]                                               |                                                                            |                4 |             13 |
+|  i_audio/i_clocking/CLK_48           |                                                                             |                                                                            |               11 |             14 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/delay[15]_i_1_n_0        |                                                                            |                6 |             16 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/pcnext[9]_i_1_n_0        |                                                                            |                7 |             20 |
+|  clk_100_buffered                    |                                                                             |                                                                            |                9 |             23 |
+|  clk_100_buffered                    |                                                                             | clk                                                                        |                7 |             26 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_n_0     |                                                                            |               10 |             48 |
+|  clk_100_buffered                    |                                                                             | i_audio/hphone_r_reg[0]                                                    |               15 |             48 |
+|  clk_100_buffered                    | i_audio/new_sample_100                                                      |                                                                            |                8 |             48 |
+|  clk_100_buffered                    | hphone_valid                                                                |                                                                            |                8 |             48 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2s_data_interface/i2s_lr_last_i_1_n_0 |                                                                            |               13 |             50 |
+|  i_audio/i_clocking/CLK_48           | i_audio/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in[126]_i_1_n_0  |                                                                            |               11 |             52 |
+|  clk_100_buffered                    | i_audio/new_sample                                                          |                                                                            |               16 |             58 |
++--------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+
+
+

@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LDCP_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module counter_5_bit
+INFO: [VRFC 10-311] analyzing module counter_8_bit
+INFO: [VRFC 10-311] analyzing module logic
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-311] analyzing module glbl

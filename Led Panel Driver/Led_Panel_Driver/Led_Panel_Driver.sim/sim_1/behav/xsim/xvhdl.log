@@ -1,0 +1,10 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.srcs/sources_1/new/counter_5_bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity counter_5_bit
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.srcs/sources_1/new/counter_8_bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity counter_8_bit
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.srcs/sources_1/new/logic.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity logic
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.srcs/sources_1/new/state_machine.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity state_machine
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.srcs/sim_1/new/logic_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity logic_tb

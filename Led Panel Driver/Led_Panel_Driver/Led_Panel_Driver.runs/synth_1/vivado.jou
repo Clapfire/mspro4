@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri Jun  1 10:13:41 2018
+# Process ID: 7192
+# Current directory: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.runs/synth_1
+# Command line: vivado.exe -log logic.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source logic.tcl
+# Log file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.runs/synth_1/logic.vds
+# Journal file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source logic.tcl -notrace

@@ -1,0 +1,2 @@
+audio_block_mem.v,verilog,xil_defaultlib,../../../../Led Panel Driver V2.srcs/sources_1/ip/audio_block_mem/sim/audio_block_mem.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

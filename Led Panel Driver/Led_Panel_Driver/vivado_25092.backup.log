@@ -1,0 +1,679 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri Jun  1 09:41:31 2018
+# Process ID: 25092
+# Current directory: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11156 D:\SDU\4th Semester\Semester Project\mspro4\Led Panel Driver\Led_Panel_Driver\Led_Panel_Driver.xpr
+# Log file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/vivado.log
+# Journal file: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [Project 1-230] Project 'Led_Panel_Driver.xpr' upgraded for this version of Vivado.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 827.832 ; gain = 78.477
+update_compile_order -fileset sources_1
+launch_simulation -mode post-implementation -type timing
+INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1653.664 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1653.664 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:37 ; elapsed = 00:00:30 . Memory (MB): peak = 1766.859 ; gain = 902.156
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.v
+INFO: [SIM-utils-37] SDF generated:D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'logic_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim'
+"xvlog --incr --relax -prj logic_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_50
+INFO: [VRFC 10-311] analyzing module clk_50_clk_50_clk_wiz
+INFO: [VRFC 10-311] analyzing module color_processor
+INFO: [VRFC 10-311] analyzing module counter_11_bit
+INFO: [VRFC 10-311] analyzing module counter_5_bit
+INFO: [VRFC 10-311] analyzing module counter_8_bit
+INFO: [VRFC 10-311] analyzing module logic
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --incr --relax -prj logic_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.srcs/sim_1/new/logic_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity logic_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto b0e8d1713b4f481b88aeecd453afc609 --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot logic_tb_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.logic_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-718] formal port <p_clk> does not exist in entity <logic>.  Please compare the definition of block <logic> to its component declaration and its instantion to detect the mismatch. [D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.srcs/sim_1/new/logic_tb.vhd:44]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:39 ; elapsed = 00:00:35 . Memory (MB): peak = 1782.328 ; gain = 917.625
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+[Fri Jun  1 09:46:02 2018] Launched synth_1...
+Run output will be captured here: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.runs/synth_1/runme.log
+[Fri Jun  1 09:46:02 2018] Launched impl_1...
+Run output will be captured here: D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.runs/impl_1/runme.log
+close_design
+launch_simulation -mode post-implementation -type timing
+INFO: [Vivado 12-5682] Launching post-implementation timing simulation in 'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-20] The target language is set to VHDL, it is not supported for simulation type 'timing', using Verilog instead.
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1783.547 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1783.547 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-31] Writing simulation netlist file for design 'impl_1'...
+INFO: [SIM-utils-32] write_verilog -mode timesim -nolib -sdf_anno true -force -file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.v"
+INFO: [SIM-utils-34] Writing SDF file...
+INFO: [SIM-utils-35] write_sdf -mode timesim -process_corner slow -force -file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.sdf"
+INFO: [SIM-utils-36] Netlist generated:D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.v
+INFO: [SIM-utils-37] SDF generated:D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.sdf
+INFO: [SIM-utils-54] Inspecting design source files for 'logic_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim'
+"xvlog --incr --relax -prj logic_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim/logic_tb_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_5_bit
+INFO: [VRFC 10-311] analyzing module counter_8_bit
+INFO: [VRFC 10-311] analyzing module logic
+INFO: [VRFC 10-311] analyzing module state_machine
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --incr --relax -prj logic_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim'
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto b0e8d1713b4f481b88aeecd453afc609 --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot logic_tb_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.logic_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "logic_tb_time_impl.sdf", for root module "logic_tb/uut".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "logic_tb_time_impl.sdf", for root module "logic_tb/uut".
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module simprims_ver.latchsre_ldpe
+Compiling module simprims_ver.LDPE
+Compiling module simprims_ver.latchsre_ldce
+Compiling module simprims_ver.LDCE
+Compiling module xil_defaultlib.state_machine
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.LUT5
+Compiling module xil_defaultlib.counter_5_bit
+Compiling module simprims_ver.LUT6
+Compiling module xil_defaultlib.counter_8_bit
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module xil_defaultlib.logic
+Compiling architecture behavioral of entity xil_defaultlib.logic_tb
+Built simulation snapshot logic_tb_time_impl
+
+****** Webtalk v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source D:/SDU/4th -notrace
+invalid command name "%"
+    while executing
+"% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current"
+    (file "D:/SDU/4th" line 1)
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun  1 09:49:37 2018...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/SDU/4th Semester/Semester Project/mspro4/Led Panel Driver/Led_Panel_Driver/Led_Panel_Driver.sim/sim_1/impl/timing/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "logic_tb_time_impl -key {Post-Implementation:sim_1:Timing:logic_tb} -tclbatch {logic_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+source logic_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 102376 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 102948 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 104706 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 105278 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 155943 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 158452 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 159024 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 159134 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 159794 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 159864 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 160179 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 160288 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 160366 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 160436 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 160465 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 160701 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 161006 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 161091 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 161700 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 162272 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 163824 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 164030 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 164100 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 164532 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 164642 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 165260 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 165372 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 165442 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 165631 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 165796 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 165874 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 166170 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 166249 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 166478 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 166538 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 166599 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 167138 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 167663 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 167842 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 169184 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 169265 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 169402 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 169538 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 169608 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 169756 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 169936 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 170040 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 170150 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 171090 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 171181 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 171304 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 171374 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 171444 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 171522 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 171946 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 172016 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 172502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 172716 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 172786 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 172880 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 172963 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 173280 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 173350 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 173518 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 173852 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 173922 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 174692 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 174762 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 174832 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 174902 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 174976 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 174980 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 175054 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 175124 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 176598 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 176816 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 176899 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 176952 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 178227 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 180562 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 180581 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 181196 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 183909 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 186009 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 186176 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 190966 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 258876 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 259448 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 260782 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 262618 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 262688 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 262769 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 262906 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 263042 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 263147 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 263190 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 263219 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 263314 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 263497 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 263684 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 263724 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 263784 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 264956 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 265085 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 266430 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 266865 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 266924 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 268266 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 268427 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 268484 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 269853 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 271168 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 271584 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 274770 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 281612 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 281760 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 282954 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 285251 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 360751 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 171: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk171_203 at time 360860 ps $width (posedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 360970 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 360988 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 362194 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 363932 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 364099 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 364656 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 366368 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 366478 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 372646 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 377977 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 386169 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 386420 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 386674 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 391286 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 391426 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 391520 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 391687 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 459547 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 460127 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 463845 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 471798 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 472019 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 472075 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 486342 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 489984 ps $width (posedge PRE,(0:0:0),0,notifier) 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'logic_tb_time_impl' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1824.539 ; gain = 40.992
+run all
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 164: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk164_139 at time 1271364 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 1405732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 1571348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 1666862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 1669122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 1669232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 1673490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 1677059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 1682743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 1880171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 1880248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 1895596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 1896893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 1897502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 1897926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 1897996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 1898074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 1989464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 2064948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 3005732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 3171348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 3266862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 3269122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 3269232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 3273490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 3277059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 3282743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 3480171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 3480248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 3495596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 3496893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 3497502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 3497926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 3497996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 3498074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 3589464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 3664948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 4605732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 4771348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 4866862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 4869122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 4869232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 4873490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 4877059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 4882743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 5080171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 5080248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 5095596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 5096893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 5097502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 5097926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 5097996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 5098074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 5189464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 5264948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 6205732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 6371348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 6466862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 6469122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 6469232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 6473490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 6477059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 6482743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 6680171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 6680248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 6695596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 6696893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 6697502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 6697926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 6697996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 6698074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 6789464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 6864948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 7805732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 7971348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 8066862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 8069122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 8069232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 8073490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 8077059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 8082743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 8280171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 8280248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 8295596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 8296893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 8297502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 8297926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 8297996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 8298074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 8389464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 8464948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 9405732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 9571348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 9666862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 9669122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 9669232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 9673490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 9677059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 9682743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 9880171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 9880248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 9895596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 9896893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 9897502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 9897926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 9897996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 9898074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 9989464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 10064948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 11005732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 11171348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 11266862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 11269122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 11269232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 11273490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 11277059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 11282743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 11480171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 11480248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 11495596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 11496893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 11497502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 11497926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 11497996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 11498074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 11589464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 11664948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 12605732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 12771348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 12866862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 12869122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 12869232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 12873490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 12877059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 12882743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 13080171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 13080248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 13095596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 13096893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 13097502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 13097926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 13097996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 13098074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 13189464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 13264948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 14205732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 14371348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 14466862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 14469122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 14469232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 14473490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 14477059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 14482743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 14680171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 14680248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 14695596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 14696893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 14697502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 14697926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 14697996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 14698074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 14789464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 14864948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 15805732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 15971348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 16066862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 16069122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 16069232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 16073490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 16077059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 16082743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 16280171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 16280248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 16295596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 16296893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 16297502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 16297926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 16297996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 16298074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 16389464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 16464948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 17405732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 17571348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 17666862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 17669122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 17669232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 17673490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 17677059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 17682743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 17880171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 17880248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 17895596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 17896893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 17897502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 17897926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 17897996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 17898074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 17989464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 18064948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 19005732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 19171348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 19266862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 19269122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 19269232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 19273490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 19277059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 19282743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 19480171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 19480248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 19495596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 19496893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 19497502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 19497926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 19497996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 19498074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 19589464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 19664948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 20605732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 20771348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 20866862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 20869122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 20869232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 20873490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 20877059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 20882743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 21080171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 21080248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 21095596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 21096893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 21097502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 21097926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 21097996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 21098074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 21189464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 21264948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 22205732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 22371348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 22466862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 22469122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 22469232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 22473490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 22477059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 22482743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 22680171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 22680248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 22695596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 22696893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 22697502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 22697926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 22697996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 22698074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 22789464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 22864948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 23805732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 23971348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 24066862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 24069122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 24069232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 24073490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 24077059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 24082743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 24280171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 24280248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 24295596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 24296893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 24297502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 24297926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 24297996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 24298074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 24389464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 24464948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 25405732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 25571348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 25666862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 25669122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 25669232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 25673490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 25677059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 25682743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 25880171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 25880248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 25895596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 25896893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 25897502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 25897926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 25897996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 25898074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 25989464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 26064948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 27005732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 27171348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 27266862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 27269122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 27269232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 27273490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 27277059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 27282743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 27480171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 27480248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 27495596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 27496893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 27497502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 27497926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 27497996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 27498074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 27589464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 27664948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 28605732 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 28771348 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 28866862 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 28869122 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 28869232 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 28873490 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 28877059 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 28882743 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 29080171 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 163: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk163_195 at time 29080248 ps $setuphold (posedge G,negedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,G_dly,D_dly) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 29095596 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 29096893 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 29097502 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 165: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk165_140 at time 29097926 ps $width (negedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 29097996 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDCE.v" Line 169: Timing violation in scope /logic_tb/uut/c1/p_clk_reg/TChk169_201 at time 29098074 ps $width (negedge G,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 29189464 ps $width (posedge PRE,(0:0:0),0,notifier) 
+WARNING: "D:\Xilinx\Vivado\Vivado\2018.1\data/verilog/src/unisims/LDPE.v" Line 168: Timing violation in scope /logic_tb/uut/c1/oe_reg/TChk168_143 at time 29264948 ps $width (posedge PRE,(0:0:0),0,notifier) 
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1829.188 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  1 10:06:35 2018...
